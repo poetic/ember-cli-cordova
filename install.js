@@ -3,24 +3,32 @@
 var exec     = require('child_process').exec;
 var fs       = require('fs-extra');
 var async    = require('async');
-var sys      = require('sys')
-var path     = require('path')
+var path     = require('path');
+var chalk    = require('chalk');
 var userArgs = process.argv.slice(2);
 
 if(userArgs.length < 2) {
-  console.error("## Error: Missing arguments ##");
-  console.error('Usage: ./install NameOfApp com.reverse.style.domain');
+  console.log(chalk.red.underline("Error: Missing arguments"));
+  console.log(chalk.yellow('Usage: ./install NameOfApp com.reverse.style.domain'));
   return;
 }
 
 var nameOfApp     = userArgs[0];
 var reverseDomain = userArgs[1];
 
-function runCommand(command) {
+function runCommand(command, startedMsg, endedMsg) {
+  if(endedMsg == null) {
+    endedMsg = 'done';
+  }
   return function(callback) {
-    console.info('executing: ' + command);
+    console.log('');
+    process.stdout.write(startedMsg);
     return exec(command, function(err, stdout, stdin){
-      sys.puts(stdout);
+      if(err) {
+        console.log(chalk.red(stdout));
+        throw err;
+      }
+      process.stdout.write(chalk.green(endedMsg));
       callback(err, stdout);
     });
   }
@@ -41,37 +49,47 @@ var wwwPath       = path.join(cdvAppPath, 'www');
 
 var symlinkCommand = 'rm -r ' + wwwPath + '; ln -s ' + emberDistPath + ' ' + wwwPath;
 
-var commands = [
-  runCommand(cordovaCommand),
-  runCommand('cd app; ' + emberCommand),
-  runCommand(symlinkCommand)
-];
-
-function copyHooks() {
+function copyHooks(callback) {
   var hooksPath         = path.join(cdvAppPath, 'hooks');
   var templateHooksPath = path.join(process.cwd(), 'templates', 'hooks');
 
+  console.log('');
+  process.stdout.write('Copying default cordova hooks to cordova project...');
   fs.copy(templateHooksPath, hooksPath, function(err) {
-    if(err) throw err;
-    console.info('copied hooks');
+    if(err) callback(err);
+    process.stdout.write(chalk.green('done'));
+    callback(null);
   });
 }
 
-function updateEnvConfig() {
+function updateEnvConfig(callback) {
+  console.log('')
+  process.stdout.write('Update ember app config locationType to hash...');
   var envPath = path.join(emberPath, 'config', 'environment.js');
   var env     = fs.readFileSync(envPath, { encoding: 'utf8' })
   env         = env.replace("locationType: 'auto'", "locationType: 'hash'");
   fs.writeFileSync(envPath, env);
-  console.log('changed config locationType to hash');
+  process.stdout.write(chalk.green('done'));
+  callback(null);
 }
+
+console.log(chalk.cyan('::Ember CLI Cordova::'));
+var commands = [
+  runCommand(cordovaCommand, "Creating Cordova project..."),
+  runCommand('cd app; ' + emberCommand, "Creating Ember project..."),
+  runCommand(symlinkCommand, "Symlinking Cordova www folder to Ember's dist..."),
+  updateEnvConfig,
+  copyHooks
+];
 
 async.series(commands,
   function(err) {
     if(err) throw err;
-    console.log('Created basic structure..');
 
-    copyHooks();
-    updateEnvConfig();
-
+    console.log('');
+    console.log('');
+    console.log(chalk.cyan('-------------------'));
+    console.log(chalk.green('All Done. Enjoy :)'));
+    console.log(chalk.cyan('-------------------'));
   }
 );
