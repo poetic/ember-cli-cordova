@@ -1,0 +1,14 @@
+{
+  "name": "app-starter-kit",
+  "version": "0.0.0",
+  "description": "./install name-of-app reverse-style-domain",
+  "main": "install.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.8.0"
+  }
+}
