@@ -11,7 +11,7 @@
   "license": "MIT",
   "preferGlobal": "true",
   "bin": {
-    "ember-cli-cordova": "ember-cli-cordova.js"
+    "ember-cli-cordova": "bin/ember-cli-cordova.js"
   },
   "dependencies": {
     "async": "^0.8.0",
