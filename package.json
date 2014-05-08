@@ -1,13 +1,18 @@
 {
-  "name": "app-starter-kit",
+  "name": "ember-cli-cordova",
   "version": "0.0.0",
-  "description": "./install name-of-app reverse-style-domain",
+  "description": "A tool for creating hybrid apps using a combination of ember-cli and cordova ",
+  "homepage": "https://github.com/poetic/ember-cli-cordova",
   "main": "install.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jake Craige",
+  "license": "MIT",
+  "preferGlobal": "true",
+  "bin": {
+    "ember-cli-cordova-install": "install.js"
+  },
   "dependencies": {
     "async": "^0.8.0",
     "fs-extra": "^0.8.1",
