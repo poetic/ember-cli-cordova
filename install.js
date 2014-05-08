@@ -48,8 +48,8 @@ var commands = [
 ];
 
 function copyTemplates() {
-  var beforeBuildPath =path.join(cdvAppPath, 'hooks', 'before_build');
-  var fileName = '001_build_ember_app.js';
+  var beforeBuildPath = path.join(cdvAppPath, 'hooks', 'before_build');
+  var fileName        = '001_build_ember_app.js';
 
   fs.mkdirSync(beforeBuildPath);
   fs.writeFileSync(
@@ -64,8 +64,8 @@ function copyTemplates() {
 
 function updateEnvConfig() {
   var envPath = path.join(emberPath, 'config', 'environment.js');
-  var env = fs.readFileSync(envPath, { encoding: 'utf8' })
-  env = env.replace("locationType: 'auto'", "locationType: 'hash'");
+  var env     = fs.readFileSync(envPath, { encoding: 'utf8' })
+  env         = env.replace("locationType: 'auto'", "locationType: 'hash'");
   fs.writeFileSync(envPath, env);
   console.log('changed config locationType to hash');
 }
@@ -73,10 +73,9 @@ function updateEnvConfig() {
 async.series(commands,
   function(err) {
     if(err) throw err;
-
     console.log('Created basic structure..');
-    copyTemplates();
 
+    copyTemplates();
     updateEnvConfig();
 
   }
