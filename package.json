@@ -11,11 +11,12 @@
   "license": "MIT",
   "preferGlobal": "true",
   "bin": {
-    "ember-cli-cordova-install": "install.js"
+    "ember-cli-cordova": "ember-cli-cordova.js"
   },
   "dependencies": {
     "async": "^0.8.0",
     "fs-extra": "^0.8.1",
-    "chalk": "^0.4.0"
+    "chalk": "^0.4.0",
+    "minimist": "0.0.8"
   }
 }
