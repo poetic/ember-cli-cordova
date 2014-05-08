@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var exec     = require('child_process').exec;
-var fs       = require('fs');
+var fs       = require('fs-extra');
 var async    = require('async');
 var sys      = require('sys')
 var path     = require('path')
@@ -47,19 +47,14 @@ var commands = [
   runCommand(symlinkCommand)
 ];
 
-function copyTemplates() {
-  var beforeBuildPath = path.join(cdvAppPath, 'hooks', 'before_build');
-  var fileName        = '001_build_ember_app.js';
+function copyHooks() {
+  var hooksPath         = path.join(cdvAppPath, 'hooks');
+  var templateHooksPath = path.join(process.cwd(), 'templates', 'hooks');
 
-  fs.mkdirSync(beforeBuildPath);
-  fs.writeFileSync(
-    path.join(beforeBuildPath, fileName),
-    fs.readFileSync(path.join(process.cwd(), 'templates', fileName)),
-    {
-      mode: "755"
-    }
-  );
-  console.log('done creating templates');
+  fs.copy(templateHooksPath, hooksPath, function(err) {
+    if(err) throw err;
+    console.info('copied hooks');
+  });
 }
 
 function updateEnvConfig() {
@@ -75,7 +70,7 @@ async.series(commands,
     if(err) throw err;
     console.log('Created basic structure..');
 
-    copyTemplates();
+    copyHooks();
     updateEnvConfig();
 
   }
