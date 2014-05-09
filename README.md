@@ -1,20 +1,26 @@
-# Install
+# Installation
 
 `npm install -g https://github.com/poetic/ember-cli-cordova`
-`ember-cdv new --name MyApp --id com.poetic.myapp`
 
-# Workflow
-You will always Work out of the app/ember directory
+# Commands
++ `ember-cdv new --name MyApp --id com.poetic.myapp` create new app
++ `ember-cdv link-production` symlink ember's dist directory to cordova's www
++ `ember-cdv link-development` symlink ember's tmp/output directory to cordova's www
++ `ember-cdv help` display help for commands
 
-### general development
-In there you can run standard ember-cli commands and develop in the browser
+# Development
 
-### simulator development
+## General
+In app/ember you can run standard ember-cli commands and develop in the browser
+
+## Simulator
 After making a change to the ember app, you must run `cordova build <platform>`
 to update the build to contain those changes. You can then relaunch the app by
-building inside of xcode or running `cordova simulate <platform>`
+building inside of xcode/eclipse or running `cordova simulate <platform>`
 
-### environment builds
+# Builds
+
+## Environment
 
 The environment is passed into the ember build command and is pulled from the
 TARGET environment variable. The environment defaults to development.
@@ -23,17 +29,9 @@ TARGET environment variable. The environment defaults to development.
 +  staging:      `TARGET=staging cordova build <platform>`
 +  development:  `cordova build <platform>`
 
-## scripts
 
-`ember-cdv link-development` to set up cordova symlink to watch tmp directory. you
-must also run `ember server` at the same time so that the files get recompiled.
-This is useful when developing to save time from having to do a full compile and
-minification.
 
-`ember-cdv link-production` to set up cordova symlink to watch dist directory.
-Needed when creating a production build
-
-## potential gotchas
+## Potential gotchas
 
 +  locationType must be set to hash
 
@@ -42,3 +40,7 @@ Needed when creating a production build
 1. setup config.xml
 2. get `ember server` to rebuild cordova on changes
    [https://github.com/stefanpenner/ember-cli/issues/655](https://github.com/stefanpenner/ember-cli/issues/655)
+3. Add cordova build commands into ember-cdv? (*not sure this if this is needed
+   or not*)
+    perhaps so you dont have to remember to define environment vars to build for
+    other environments
