@@ -34,13 +34,3 @@ TARGET environment variable. The environment defaults to development.
 ## Potential gotchas
 
 +  locationType must be set to hash
-
-## TODO
-
-1. setup config.xml
-2. get `ember server` to rebuild cordova on changes
-   [https://github.com/stefanpenner/ember-cli/issues/655](https://github.com/stefanpenner/ember-cli/issues/655)
-3. Add cordova build commands into ember-cdv? (*not sure this if this is needed
-   or not*)
-    perhaps so you dont have to remember to define environment vars to build for
-    other environments
