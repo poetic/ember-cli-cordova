@@ -11,7 +11,7 @@ var commandPath = path.join(__dirname, '..', 'lib', 'commands', command + '.js')
 fs.exists(commandPath, function(exists){
   if(exists) {
     if(options._[1] === 'help' || options.h) {
-      require('../lib/commands/' + command)(options).displayUsage();
+      require('../lib/commands/' + command)(options).displayHelp();
     }
     else {
       require('../lib/commands/' + command)(options).validateAndRun();
