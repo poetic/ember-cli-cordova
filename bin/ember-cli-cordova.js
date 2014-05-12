@@ -10,9 +10,7 @@ var commandPath = path.join(__dirname, '..', 'lib', 'commands', command + '.js')
 
 fs.exists(commandPath, function(exists){
   if(exists) {
-    if(command === 'help') {
-      require('../lib/commands/help')();
-    } else if(options._[1] === 'help' || options.h) {
+    if(options._[1] === 'help' || options.h) {
       require('../lib/commands/' + command)(options).displayUsage();
     }
     else {
@@ -20,7 +18,7 @@ fs.exists(commandPath, function(exists){
     }
   } else {
     console.log(chalk.red.underline("Error: Unknown command"));
-    require('../lib/commands/help')();
+    require('../lib/commands/help')().validateAndRun();
   }
 });
 
