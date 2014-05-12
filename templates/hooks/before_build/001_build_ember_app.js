@@ -5,9 +5,9 @@ var exec = require('child_process').exec;
 
 var rootdir = process.argv[2];
 
-var target = "development";
-if (process.env.TARGET) {
-  target = process.env.TARGET;
+var env = "development";
+if (process.env.EMBER_CDV_ENV) {
+  env = process.env.EMBER_CDV_ENV;
 }
 
 function puts(error, stdout, stderr) {
@@ -17,6 +17,6 @@ function puts(error, stdout, stderr) {
 var emberPath = path.join(rootdir, 'ember');
 
 console.log('--------------------------------------');
-console.log("Building ember-app for environment: " + target);
+console.log("Building ember-app for environment: " + env);
 console.log('--------------------------------------');
-exec('cd ' + emberPath+ '; ember build --environment ' + target, puts);
+exec('cd ' + emberPath+ '; ember build --environment ' + env, puts);
