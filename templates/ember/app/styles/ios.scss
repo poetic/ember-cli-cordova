@@ -1,0 +1,43 @@
+@import 'variables';
+
+ul {
+  &.ui-table-view {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 0 10px;
+      /*border-bottom: 1px solid $gray-border;*/
+      line-height: 50px;
+      height: 50px;
+
+      &.no-results {
+        border-bottom: 0;
+        text-align: center;
+      }
+      &.disclosure {
+        /*background-image: url(../assets/disclosure.png);*/
+        background-position: 96% center;
+        background-size: 10px;
+        background-repeat: no-repeat;
+      }
+      &.no-border {
+        border: 0;
+      }
+    }
+    &.auto-height {
+      li {
+        height: auto;
+        line-height: 1.5rem;
+      }
+    }
+    &.no-padding {
+      li {
+        padding: 0;
+      }
+    }
+    &.border-top {
+      /*border-top: 1px solid $gray-border;*/
+    }
+  }
+}
