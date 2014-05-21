@@ -17,7 +17,9 @@
 }
 
 html {
-  font-size: 62.5%; // sets rems to 10x px size. 1.2rem === 12px
+  // http://gregrickaby.com/using-the-golden-ratio-and-rems/
+  font-size: 62.5%;
+  background-color: $bg-color;
 }
 
 body {
@@ -39,80 +41,6 @@ body {
 
 #scrollable {
   height: 101%;
-}
-
-header {
-  overflow: hidden;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  height: 65px;
-  padding-top: 20px;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  border-bottom: 1px solid rgba(128,128,128,0.3);
-
-  h1 {
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 1.6rem;
-    line-height: 45px;
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  .left-button,
-  .right-button {
-    margin: 0;
-    line-height: 45px;
-    font-weight: 300;
-    font-size: 1.6rem;
-  }
-  .left-button {
-    position: absolute;
-    z-index: 10;
-    left: 10px;
-  }
-  .right-button {
-    position: absolute;
-    z-index: 10;
-    top: 20px;
-    right: 10px;
-  }
-  .back-button {
-    background-image: url(../assets/left-arrow.png);
-    background-position: left center;
-    background-size: 11px 20px;
-    background-repeat: no-repeat;
-    padding-left: 1.7rem;
-  }
-  .group {
-    position: absolute;
-    z-index: 10;
-    top: 20px;
-    right: 10px;
-    .left-button,
-    .right-button {
-      position: static;
-    }
-    .right-button {
-      margin-left: 5px;
-    }
-    .left-button {
-      margin-right: 5px;
-    }
-  }
-  .logo {
-    max-height: 3.5rem;
-  }
 }
 
 .modal {
