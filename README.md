@@ -26,7 +26,7 @@ After making a change to the ember app, you must run `ember-cdv build <platform>
 to update the build to contain those changes. You can then relaunch the app by
 building inside of xcode/eclipse or running `cordova emulate <platform>`
 
-# Builds
+## Builds
 
 To build for different environments you run the `ember-cdv build` command with
 the options you want
@@ -44,8 +44,7 @@ some info about some dependencies it uses.
 
 # FAQ
 
-## I'm getting "You have to be inside an ember-cli project in order to use the
-serve command." when I run `ember server`
+## I'm getting "You have to be inside an ember-cli project in order to use the serve command." when I run `ember server`
 
 You need to cd into the ember/ directory to start up the server
 
@@ -54,6 +53,6 @@ You need to cd into the ember/ directory to start up the server
 See "New project creation quirks above"
 
 
-### Potential gotchas
+# Potential gotchas
 
 +  locationType must be set to hash
