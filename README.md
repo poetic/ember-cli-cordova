@@ -1,3 +1,5 @@
+*this only works currently off of master ember-cli*
+
 # Installation
 
 `npm install -g https://github.com/poetic/ember-cli-cordova`
