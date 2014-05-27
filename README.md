@@ -38,14 +38,9 @@ some info about some dependencies it uses.
 
 # FAQ
 
-## I'm getting "You have to be inside an ember-cli project in order to use the serve command." when I run `ember server`
+#### I'm getting "You have to be inside an ember-cli project in order to use the serve command." when I run `ember server`
 
 You need to cd into the ember/ directory to start up the server
-
-## The slide transition isn't working right, it's fading in over the content
-
-See "New project creation quirks above"
-
 
 # Potential gotchas
 
