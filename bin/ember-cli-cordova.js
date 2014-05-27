@@ -14,6 +14,7 @@ console.log('version:', emberCDVVersion(), '\n');
 fs.exists(userCommandPath, function(exists){
   if(exists) {
     command = new (require('../lib/commands/' + userCommand))(options)
+
     if(options._[1] === 'help' || options.h) {
       command.displayHelp();
       console.log();
