@@ -5,18 +5,10 @@
 `npm install -g https://github.com/poetic/ember-cli-cordova`
 
 # Commands
-+ `ember-cdv new --name MyApp --id com.poetic.myapp` create new app
++ `ember-cdv new MyApp com.poetic.myapp` create new app
 + `ember-cdv build --environment production --platform ios` build cordova
   project
-+ `ember-cdv link-production` symlink ember's dist directory to cordova's www
-+ `ember-cdv link-development` symlink ember's tmp/output directory to cordova's www
 + `ember-cdv help` display help for commands
-
-# New project creation quirks
-
-Currently after generating a new project, you need to go into
-ember/app/index.html and add `<link rel="stylesheet" href="assets/vendor.css">`
-before the ember-cli-cordova.css file
 
 # Development
 
