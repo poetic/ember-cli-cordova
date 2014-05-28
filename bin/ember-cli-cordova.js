@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict';
 
 var fs              = require('fs');
 var path            = require('path');
@@ -14,7 +15,7 @@ var command;
 ui.write('version: ' + emberCDVVersion() + '\n\n');
 fs.exists(userCommandPath, function(exists){
   if(exists) {
-    command = new (require('../lib/commands/' + userCommand))(options)
+    command = new (require('../lib/commands/' + userCommand))(options);
 
     if(options._[1] === 'help' || options.h) {
       command.displayHelp();
@@ -24,7 +25,7 @@ fs.exists(userCommandPath, function(exists){
       command.validateAndRun();
     }
   } else {
-    ui.write(chalk.red.underline("Error: Unknown command"));
+    ui.write(chalk.red.underline('Error: Unknown command'));
     var command = new (require('../lib/commands/help'))();
     command.validateAndRun();
   }
