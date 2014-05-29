@@ -13,21 +13,20 @@ var userCommandPath = path.join(__dirname, '../lib/commands', userCommand + '.js
 var command;
 
 ui.write('version: ' + emberCDVVersion() + '\n\n');
-fs.exists(userCommandPath, function(exists){
-  if(exists) {
-    command = new (require('../lib/commands/' + userCommand))(options);
 
-    if(options._[1] === 'help' || options.h) {
-      command.displayHelp();
-      ui.write('\n');
-    }
-    else {
-      command.validateAndRun();
-    }
-  } else {
-    ui.write(chalk.red.underline('Error: Unknown command'));
-    var command = new (require('../lib/commands/help'))();
+if(fs.existsSync(userCommandPath)) {
+  command = new (require('../lib/commands/' + userCommand))(options);
+
+  if(options._[1] === 'help' || options.h) {
+    command.displayHelp();
+    ui.write('\n');
+  }
+  else {
     command.validateAndRun();
   }
-});
 
+} else {
+  ui.write(chalk.red.underline('Unknown command:', userCommand, '\n'));
+  command = new (require('../lib/commands/help'))();
+  command.validateAndRun();
+}
