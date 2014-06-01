@@ -5,7 +5,7 @@
 `npm install -g https://github.com/poetic/ember-cli-cordova`
 
 # Commands
-+ `ember-cdv new MyApp com.poetic.myapp` create new app
++ `ember-cdv new MyApp com.poetic.myapp --git` create new app
 + `ember-cdv build --environment production --platform ios` build cordova project
 + `ember-cdv archive 0.0.2 --environment staging --commit --tag` archive ios project with xcode
 + `ember-cdv help` display help for commands
