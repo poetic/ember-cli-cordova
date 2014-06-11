@@ -1,4 +1,4 @@
-*this only works currently off of the master ember-cli version*
+*currently broken after recent changes to ember-cli. Fix is in progress*
 
 # Installation
 
