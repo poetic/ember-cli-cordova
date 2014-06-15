@@ -59,3 +59,18 @@ trouble.
 # Potential gotchas
 
 +  locationType must be set to hash
+
+# Contributing
+
+## Working with master
+
+``` sh
+git clone https://github.com/poetic/ember-cli-cordova.git
+cd ember-cli-cordova
+npm link
+```
+
+`npm link` is very similar to `npm install -g` except that instead of downloading the package from the repo the just cloned `ember-cli/` folder becomes the global package. Any changes to the files in the `ember-cli-cordova/` folder will immediatly affect the global ember-cli-cordova package.
+
+Now you can run the `ember-cdv` command
+
