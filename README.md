@@ -1,5 +1,3 @@
-*currently broken after recent changes to ember-cli. Fix is in progress*
-
 # Installation
 
 `npm install -g https://github.com/poetic/ember-cli-cordova`
