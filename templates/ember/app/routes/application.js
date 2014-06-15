@@ -14,6 +14,13 @@ export default Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin, {
       });
     },
 
+    openModal: function(name) {
+      this.render(name, {
+        into: 'application',
+        outlet: 'modal'
+      });
+    },
+
     openLink: function(url) {
       window.open(url, '_system');
     }
