@@ -1,6 +1,6 @@
 # Installation
 
-`npm install -g https://github.com/poetic/ember-cli-cordova`
+`npm install -g git://github.com/poetic/ember-cli-cordova`
 
 # Commands
 + `ember-cdv new MyApp com.poetic.myapp --git` create new app
