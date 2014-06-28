@@ -74,3 +74,7 @@ npm link
 
 Now you can run the `ember-cdv` command
 
+# Credits
+
+[ember-cli](https://github.com/stefanpenner/ember-cli)
+[ember](https://github.com/emberjs/emberjs)
