@@ -6,7 +6,12 @@ function EmberCLICordova(project) {
 }
 
 EmberCLICordova.prototype.includedCommands = function() {
-  return {};
+  return {
+    'cdv:init': require('./lib/commands/init')
+  };
 }
+
+EmberCLICordova.prototype.included = function() { }
+EmberCLICordova.prototype.treeFor = function() { }
 
 module.exports = EmberCLICordova;
