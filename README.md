@@ -2,16 +2,29 @@
 
 `npm install -g git://github.com/poetic/ember-cli-cordova`
 
+# *A heads up*
+
+I've got a [PR](https://github.com/stefanpenner/ember-cli/pull/1196) into
+ember-cli right now that adds support for addons adding commands to the CLI.
+Once this lands I'll be converting this project to be added on as an addon. It
+will cause some large changes to have to be made here but in the end it will
+help have tighter integration with the cli and allow better features in the
+future. :)
+
 # Commands
 + `ember-cdv new MyApp com.poetic.myapp --git` create new app
 + `ember-cdv build --environment production --platform ios` build cordova project
 + `ember-cdv archive 0.0.2 --environment staging --commit --tag` archive ios project with xcode
++ `ember-cdv prepare` needs to be run after cloning a project
 + `ember-cdv help` display help for commands
 
 # Development
 
 ## General
-In ember/ you can run standard ember-cli commands and develop in the browser
+In the root folder you can run standard ember-cli commands and develop in the
+browser. Most cordova commands you need are wrapped in some way by ember-cdv,
+if you need to run raw commands you will need to cd into the `cordova/`
+directory
 
 ## Simulator
 After making a change to the ember app, you must run `ember-cdv build <platform>`
@@ -36,9 +49,9 @@ some info about some dependencies it uses.
 
 # FAQ
 
-#### I'm getting "You have to be inside an ember-cli project in order to use the serve command." when I run `ember server`
+#### I am getting `Current working directory is not a Cordova-based project.` when I run a cordova command
 
-You need to cd into the ember/ directory to start up the server
+You need to cd into the cordova/ directory to run raw cordova commands
 
 #### When running `ember-cdv archive` command I get an Xcode build error saying the scheme doesnt exist
 
@@ -58,7 +71,7 @@ trouble.
 
 # Potential gotchas
 
-+  locationType must be set to hash
++  locationType must be set to hash to work inside cordova
 
 # Contributing
 
@@ -70,7 +83,7 @@ cd ember-cli-cordova
 npm link
 ```
 
-`npm link` is very similar to `npm install -g` except that instead of downloading the package from the repo the just cloned `ember-cli/` folder becomes the global package. Any changes to the files in the `ember-cli-cordova/` folder will immediatly affect the global ember-cli-cordova package.
+`npm link` is very similar to `npm install -g` except that instead of downloading the package from the repo the just cloned `ember-cli/` directory becomes the global package. Any changes to the files in the `ember-cli-cordova/` directory will immediatly affect the global ember-cli-cordova package.
 
 Now you can run the `ember-cdv` command
 
