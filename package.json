@@ -15,10 +15,10 @@
   },
   "ember-addon": {
     "main": "index.js"
-  }
+  },
   "keywords": [
     "ember-addon"
-  ]
+  ],
   "dependencies": {
     "async": "^0.8.0",
     "fs-extra": "^0.8.1",

@@ -12,7 +12,7 @@ help have tighter integration with the cli and allow better features in the
 future. :)
 
 # Commands
-+ `ember-cdv new MyApp com.poetic.myapp --git` create new app
++ `ember cdv:init com.poetic.myapp` initialize cordova project
 + `ember-cdv build --environment production --platform ios` build cordova project
 + `ember-cdv archive 0.0.2 --environment staging --commit --tag` archive ios project with xcode
 + `ember-cdv prepare` needs to be run after cloning a project
