@@ -1,14 +1,14 @@
 'use strict';
 
+var commands = require('./lib/commands');
+
 function EmberCLICordova(project) {
   this.project = project;
   this.name    = 'Ember CLI Cordova';
 }
 
 EmberCLICordova.prototype.includedCommands = function() {
-  return {
-    'cdv:init': require('./lib/commands/init')
-  };
+  return commands;
 }
 
 EmberCLICordova.prototype.included = function() { }
