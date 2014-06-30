@@ -1,3 +1,5 @@
+##*currently only works off of master ember-cli until it's version is > 0.0.37*
+
 # Installation
 
 `npm install -g git://github.com/poetic/ember-cli-cordova`
@@ -42,7 +44,9 @@ some info about some dependencies it uses.
 
 #### I am getting `Current working directory is not a Cordova-based project.` when I run a cordova command
 
-You need to cd into the cordova/ directory to run raw cordova commands
+If you are running a cli command, make sure the dist directory exists. You can
+run `ember build` to create it if it doesnt. If you are running a raw
+cordova command, you need to cd into cordova/ to run it.
 
 #### When running `ember cdv:archive` command I get an Xcode build error saying the scheme doesnt exist
 
