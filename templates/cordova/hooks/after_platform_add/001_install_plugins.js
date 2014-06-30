@@ -3,7 +3,7 @@
 var pluginlist = [
   "org.apache.cordova.dialogs",
   "org.apache.cordova.inappbrowser",
-  "org.apache.cordova.spashscreen",
+  "org.apache.cordova.splashscreen",
   "org.apache.cordova.statusbar"
 ];
 
