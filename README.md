@@ -2,7 +2,11 @@
 
 # Installation
 
-`npm install -g git://github.com/poetic/ember-cli-cordova`
+Inside of a generated ember-cli project run:
+
+```
+npm install --save-dev ember-cli-cordova
+```
 
 # Commands
 + `ember cdv:init com.poetic.myapp` initialize cordova project
@@ -10,6 +14,7 @@
 + `ember cdv:build --environment production --platform ios` build cordova project
 + `ember cdv:archive 0.0.2 --environment staging --commit --tag` archive ios project with xcode
 + `ember cdv:prepare` needs to be run after cloning a project
++ `ember help` ember cli help with a section for addon provided commands as well
 
 # Development
 
