@@ -1,13 +1,13 @@
 {
   "name": "ember-cli-cordova",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A tool for creating hybrid apps using a combination of ember-cli and cordova ",
   "homepage": "https://github.com/poetic/ember-cli-cordova",
   "main": "bin/ember-cli-cordova.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Jake Craige",
+  "author": "Jake Craige <jake@poeticsystems.com>",
   "license": "MIT",
   "preferGlobal": "true",
   "bin": {
