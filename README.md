@@ -143,14 +143,8 @@ in the test app you generated. It just symlinks the node_modules folder.
 
 # Example App
 
-To run the example app:
-
-```sh
-git clone https://github.com/poetic/ember-cli-cordova.git
-cd ember-cli-cordova/example-app
-npm install
-ember serve
-```
+You can find an example app using this here:
+[jakecraige/ember-cli-cordova-example-app](https://github.com/jakecraige/ember-cli-cordova-example-app)
 
 # Credits
 
