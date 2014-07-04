@@ -1,4 +1,9 @@
-##*currently only works off of master ember-cli until it's version is > 0.0.37*
+*requires ember-cli > 0.0.37*
+
+## Goals
+
+Provide a toolchain tightly integrated with ember-cli to make developing hybrid
+apps with cordova and ember as simple as possible.
 
 # Installation
 
@@ -7,8 +12,9 @@ Inside of a generated ember-cli project run:
 ```
 npm install --save-dev ember-cli-cordova
 ```
+# Usage
 
-# Commands
+## Commands
 + `ember cordova:init com.poetic.myapp` initialize cordova project
 + `ember cordova:open` open cordova xcode project
 + `ember cordova:build --environment production --platform ios` build cordova project
@@ -16,20 +22,65 @@ npm install --save-dev ember-cli-cordova
 + `ember cordova:prepare` needs to be run after cloning a project
 + `ember help` ember cli help with a section for addon provided commands as well
 
-# Development
-
-## General
+### General
 In the root folder you can run standard ember-cli commands and develop in the
 browser. Most cordova commands you need are wrapped in some way by ember-cli-cordova,
 if you need to run raw commands you will need to cd into the `cordova/`
 directory
 
-## Simulator
-After making a change to the ember app, you must run `ember cordova:build`
-to update the build to contain those changes. You can then relaunch the app by
-building inside of xcode/eclipse or running `cordova emulate <platform>`
+**Recommended Workflow**
+Develop as much as you can in the browser because it provides the quickest
+feedback. Every now and then build the cordova version and make sure it's
+working properly.
 
-## Builds
+If you are working with a native plugin and need the app in the simulator,
+enable the rebuild in the configuration described below.
+
+### Running in the simulator
+If you do not have rebuildOnChange enabled(described in the configuration
+section), after making a change to the ember app, you must run `ember
+cordova:build` to update the build to contain those changes. You can then
+relaunch the app by building inside of xcode/eclipse or running `cordova emulate
+<platform>`
+
+### Configuration
+
+All configuration is currently optional. Configuration will be done in your
+app's config/environment.js file. You need to set it up like this: 
+
+*All options are related to the rebuild process.*
+
+```js
+ENV.cordova = {
+  // Rebuild the cordova project on file changes. Blocks the server until it's
+  // finished.
+  //
+  // default: false
+  rebuildOnChange: true, 
+
+  // Don't block the server during the rebuild
+  //
+  // default: false
+  rebuildAsync: true, 
+
+  // Run the cordova emulate command after the build is finished
+  //
+  // default: false
+  emulate: true 
+
+  // Which platform to build and/or emulate
+  //
+  // default: 'ios'
+  platform: 'ios' 
+};
+```
+
+I recommend only enabling this when you need it. It takes awhile to rebuild and
+will slow everything down. The rebuild option is most useful when developing or
+working with a cordova plugin when you need the javascript updated along with
+the native component.
+
+### Builds
 
 To build for different environments you run the `ember cordova:build` command with
 the options you want
