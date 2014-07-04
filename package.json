@@ -3,27 +3,21 @@
   "version": "0.0.1",
   "description": "A tool for creating hybrid apps using a combination of ember-cli and cordova ",
   "homepage": "https://github.com/poetic/ember-cli-cordova",
-  "main": "bin/ember-cli-cordova.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jake Craige <jake@poeticsystems.com>",
   "license": "MIT",
-  "preferGlobal": "true",
-  "bin": {
-    "ember-cdv": "bin/ember-cli-cordova.js"
-  },
   "ember-addon": {
-    "main": "index.js"
+    "main": "index"
   },
   "keywords": [
     "ember-addon"
   ],
   "dependencies": {
-    "async": "^0.8.0",
     "fs-extra": "^0.8.1",
     "chalk": "^0.4.0",
-    "minimist": "0.0.8",
     "lodash": "^2.4.1",
     "findup-sync": "^0.1.3",
     "rsvp": "^3.0.6",
