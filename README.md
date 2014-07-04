@@ -9,11 +9,11 @@ npm install --save-dev ember-cli-cordova
 ```
 
 # Commands
-+ `ember cdv:init com.poetic.myapp` initialize cordova project
-+ `ember cdv:open` open cordova xcode project
-+ `ember cdv:build --environment production --platform ios` build cordova project
-+ `ember cdv:archive 0.0.2 --environment staging --commit --tag` archive ios project with xcode
-+ `ember cdv:prepare` needs to be run after cloning a project
++ `ember cordova:init com.poetic.myapp` initialize cordova project
++ `ember cordova:open` open cordova xcode project
++ `ember cordova:build --environment production --platform ios` build cordova project
++ `ember cordova:archive 0.0.2 --environment staging --commit --tag` archive ios project with xcode
++ `ember cordova:prepare` needs to be run after cloning a project
 + `ember help` ember cli help with a section for addon provided commands as well
 
 # Development
@@ -25,13 +25,13 @@ if you need to run raw commands you will need to cd into the `cordova/`
 directory
 
 ## Simulator
-After making a change to the ember app, you must run `ember cdv:build`
+After making a change to the ember app, you must run `ember cordova:build`
 to update the build to contain those changes. You can then relaunch the app by
 building inside of xcode/eclipse or running `cordova emulate <platform>`
 
 ## Builds
 
-To build for different environments you run the `ember cdv:build` command with
+To build for different environments you run the `ember cordova:build` command with
 the options you want
 
 # Docs / Guides
@@ -53,7 +53,7 @@ If you are running a cli command, make sure the dist directory exists. You can
 run `ember build` to create it if it doesnt. If you are running a raw
 cordova command, you need to cd into cordova/ to run it.
 
-#### When running `ember cdv:archive` command I get an Xcode build error saying the scheme doesnt exist
+#### When running `ember cordova:archive` command I get an Xcode build error saying the scheme doesnt exist
 
 Error example:
 
@@ -65,7 +65,7 @@ xcodebuild: error: The project 'MyApp' does not contain a scheme named 'MyApp'.
 
 This is caused by now having opened the project in Xcode before. It
 automatically generates some info it needs to archive the project. To fix this,
-run `ember cdv:open` and let it open in Xcode. After you have done this once you
+run `ember cordova:open` and let it open in Xcode. After you have done this once you
 can just run the `archive` command again and it shouldn't give you any more
 trouble.
 
