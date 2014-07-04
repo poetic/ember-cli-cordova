@@ -1,5 +1,3 @@
-/* jshint node: true */
-
 module.exports = function(environment) {
   var ENV = {
     baseURL: '/',
@@ -32,6 +30,12 @@ module.exports = function(environment) {
     ENV.appEnv      = 'development';
     ENV.nodeApiUrl  = 'http://localhost:3000/api/v1';
     ENV.apiUrl      = 'http://localhost:8080/api/v1';
+
+    ENV.cordova = {
+      rebuildOnChange: false,
+      rebuildAsync: false,
+      emulate: false
+    };
   }
 
   if (environment === 'staging') {
