@@ -134,12 +134,23 @@ cd ember-cli-cordova
 npm link
 ember new CordovaTest
 cd CordovaTest
-npm install --save-dev <path to where you cloned it>
+npm install --save-dev ember-cli-cordova
 npm link ember-cli-cordova
 ```
 
 After this, any changes you make to the cloned repo will be instantly reflected
 in the test app you generated. It just symlinks the node_modules folder.
+
+# Example App
+
+To run the example app:
+
+```sh
+git clone https://github.com/poetic/ember-cli-cordova.git
+cd ember-cli-cordova/example-app
+npm install
+ember serve
+```
 
 # Credits
 
