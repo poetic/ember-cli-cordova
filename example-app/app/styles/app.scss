@@ -1,0 +1,70 @@
+@import 'variables';
+@import 'typography';
+@import 'utils';
+@import 'ios';
+@import 'forms';
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  input, textarea {
+    -webkit-touch-callout: auto;
+    -webkit-user-select: auto;
+  }
+}
+
+html {
+  // http://gregrickaby.com/using-the-golden-ratio-and-rems/
+  font-size: 62.5%;
+  background-color: $bg-color;
+}
+
+body {
+  margin: 0;
+}
+
+#main {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  &.has-tabbar {
+    bottom: 52px;
+  }
+}
+
+#scrollable {
+  height: 101%;
+}
+
+.modal {
+  position: relative;
+  margin: 45% auto;
+  width: 80%;
+  padding: 2rem 1rem;
+  background: $modal-bg-color;
+  p {
+    margin-top: 0.25rem;
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem 1rem 1.5rem 2rem;
+  }
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}

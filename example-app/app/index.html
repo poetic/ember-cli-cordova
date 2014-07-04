@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ExampleApp</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/example-app.css">
+  </head>
+  <body>
+    <script>
+      window.ExampleAppENV = {{ENV}};
+      window.EmberENV = window.ExampleAppENV.EmberENV;
+    </script>
+    <script src="cordova.js"></script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/example-app.js"></script>
+    <script>
+      window.ExampleApp = require('example-app/app')['default'].create(ExampleAppENV.APP);
+    </script>
+  </body>
+</html>

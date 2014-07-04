@@ -1,0 +1,41 @@
+.text-center {
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.full {
+  width: 100%;
+}
+
+.content-padded {
+  padding: 10px;
+  &.no-bottom {
+    padding-bottom: 0;
+  }
+  &.no-top {
+    padding-top: 0;
+  }
+}
+
+.clear {
+  clear: both;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
