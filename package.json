@@ -5,7 +5,9 @@
   "homepage": "https://github.com/poetic/ember-cli-cordova",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 8000 --reporter spec tests/**/*-test.js",
+    "test-all": "mocha --timeout 8000 --reporter spec tests/**/*-test.js",
+    "autotest": "mocha --watch --reporter spec tests/**/**/*-test.js"
   },
   "author": "Jake Craige <jake@poeticsystems.com>",
   "license": "MIT",
@@ -24,5 +26,11 @@
     "recursive-readdir": "^1.1.1",
     "underscore.string": "^2.3.3",
     "cordova": "^3.5.0-0.2.4"
+  },
+  "devDependencies": {
+    "mocha": "^1.20.1",
+    "mocha-jshint": "0.0.7",
+    "chai": "^1.9.1",
+    "tmp-sync": "^1.0.1"
   }
 }
