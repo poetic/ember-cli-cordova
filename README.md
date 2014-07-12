@@ -12,14 +12,16 @@ Inside of a generated ember-cli project run:
 ```
 npm install --save-dev ember-cli-cordova
 ```
+
 # Usage
 
 ## Commands
-+ `ember cordova:init com.poetic.myapp` initialize cordova project
++ `ember cordova:init com.poetic.myapp --platform ios` initialize cordova project
 + `ember cordova:open` open cordova xcode project
 + `ember cordova:build --environment production --platform ios` build cordova project
 + `ember cordova:archive 0.0.2 --environment staging --commit --tag` archive ios project with xcode
 + `ember cordova:prepare` needs to be run after cloning a project
++ `ember cordova` Passes commands(plugin(s), platform(s), run, emulate) and arguments to the cordova command
 + `ember help` ember cli help with a section for addon provided commands as well
 
 ### General
@@ -101,8 +103,7 @@ some info about some dependencies it uses.
 #### I am getting `Current working directory is not a Cordova-based project.` when I run a cordova command
 
 If you are running a cli command, make sure the dist directory exists. You can
-run `ember build` to create it if it doesnt. If you are running a raw
-cordova command, you need to cd into cordova/ to run it.
+run `ember build` to create it if it doesnt.
 
 #### When running `ember cordova:archive` command I get an Xcode build error saying the scheme doesnt exist
 
