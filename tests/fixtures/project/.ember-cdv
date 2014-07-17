@@ -1,0 +1,5 @@
+{
+  "name": "TestApp",
+  "modulePrefix": "test-app",
+  "id": "com.poetic.test-app"
+}
