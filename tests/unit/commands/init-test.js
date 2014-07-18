@@ -1,5 +1,4 @@
 var path    = require('path');
-var expect  = require('chai').expect;
 var init    = require('../../../lib/commands/init');
 var Promise = require('../../../lib/ext/promise');
 var stub    = require('../../helpers/stub');
