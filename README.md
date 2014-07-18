@@ -1,3 +1,5 @@
+# ember-cli-cordova [![Build Status](https://travis-ci.org/poetic/ember-cli-cordova.svg?branch=master)](https://travis-ci.org/poetic/ember-cli-cordova)
+
 *requires ember-cli > 0.0.37*
 
 ## Goals
