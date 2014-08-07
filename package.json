@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "A tool for creating hybrid apps using a combination of ember-cli and cordova ",
   "homepage": "https://github.com/poetic/ember-cli-cordova",
+  "repository": "https://github.com/poetic/ember-cli-cordova.git",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require tests/helpers/_helper.js --reporter spec tests/**/*-test.js",
