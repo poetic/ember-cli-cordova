@@ -15,6 +15,9 @@ Inside of a generated ember-cli project run:
 npm install --save-dev ember-cli-cordova
 ```
 
+You must have [cordova](https://www.npmjs.org/package/cordova) installed
+globally for this command to work.
+
 # Usage
 
 ## Commands
