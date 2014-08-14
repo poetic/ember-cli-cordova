@@ -1,5 +1,8 @@
+/* jshint node: true */
+
 module.exports = function(environment) {
   var ENV = {
+    environment: environment,
     baseURL: '/',
     locationType: 'hash',
     EmberENV: {
@@ -12,40 +15,39 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    cordova: {
+      rebuildOnChange: false,
+      rebuildAsync: false,
+      emulate: false
     }
   };
 
   if (environment === 'development') {
-    // LOG_MODULE_RESOLVER is needed for pre-1.6.0
-    ENV.LOG_MODULE_RESOLVER = true;
-
-    ENV.APP.LOG_RESOLVER = true;
+    // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
-    ENV.APP.LOG_MODULE_RESOLVER = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
 
+    ENV.apiUrl = 'http://localhost:3000/api/v1';
     ENV.development = true;
-    ENV.appEnv      = 'development';
-    ENV.nodeApiUrl  = 'http://localhost:3000/api/v1';
-    ENV.apiUrl      = 'http://localhost:8080/api/v1';
+  }
 
-    ENV.cordova = {
-      rebuildOnChange: false,
-      rebuildAsync: false,
-      emulate: false
-    };
+  if (environment === 'test') {
+
   }
 
   if (environment === 'staging') {
+    ENV.apiUrl = 'http://<%= modulePrefix %>-staging.herokuapp.com/api/v1';
     ENV.staging = true;
-    ENV.appEnv  = 'staging';
   }
 
+
   if (environment === 'production') {
+    ENV.apiUrl = 'http://<%= modulePrefix %>.herokuapp.com/api/v1';
     ENV.production = true;
-    ENV.appEnv     = 'production';
   }
 
   return ENV;

@@ -19,20 +19,6 @@ body {
   margin: 0;
 }
 
-#main {
-  position: absolute;
-  top: 65px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-}
-
-#scrollable {
-  height: 101%;
-}
-
 .modal {
   position: relative;
   margin: 45% auto;

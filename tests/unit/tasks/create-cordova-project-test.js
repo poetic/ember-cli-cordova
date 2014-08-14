@@ -5,10 +5,10 @@ describe('Tasks - Create cordova project', function() {
 
   beforeEach(function() {
     project = {
-      cdvConfig: new Config('/path/that/doesnt/exist', {
+      cordovaConfig: {
         id: 'com.poetic.test-app',
         name: 'TestApp'
-      }),
+      },
       root: 'project-root'
     };
   });

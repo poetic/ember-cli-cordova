@@ -1,12 +1,17 @@
 'use strict';
 
-var commands   = require('./lib/commands');
+var path      = require('path');
+var commands  = require('./lib/commands');
 var postBuild = require('./lib/tasks/post-build');
 
 function EmberCLICordova(project) {
   this.project = project;
   this.name    = 'Ember CLI Cordova';
   this.setConfig();
+}
+
+EmberCLICordova.prototype.blueprintsPath = function() {
+  return path.join(__dirname, 'blueprints');
 }
 
 EmberCLICordova.prototype.includedCommands = function() {
@@ -28,9 +33,5 @@ EmberCLICordova.prototype.setConfig = function(){
 EmberCLICordova.prototype.postBuild = function() {
   return postBuild(this.project, this.config)();
 }
-
-// Compatability with < 0.0.38
-EmberCLICordova.prototype.included = function() { }
-EmberCLICordova.prototype.treeFor = function() { }
 
 module.exports = EmberCLICordova;
