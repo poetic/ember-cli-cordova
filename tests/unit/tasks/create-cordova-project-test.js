@@ -1,5 +1,3 @@
-var Config = require('../../../lib/utils/config');
-
 describe('Tasks - Create cordova project', function() {
   var project;
 
