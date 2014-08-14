@@ -1,6 +1,6 @@
 # ember-cli-cordova [![Build Status](https://travis-ci.org/poetic/ember-cli-cordova.svg?branch=master)](https://travis-ci.org/poetic/ember-cli-cordova)
 
-*requires ember-cli > 0.0.37*
+*requires ember-cli >= 0.0.40*
 
 ## Goals
 
@@ -11,8 +11,23 @@ apps with cordova and ember as simple as possible.
 
 Inside of a generated ember-cli project run:
 
-```
+```sh
 npm install --save-dev ember-cli-cordova
+```
+
+Then you need to initialize the cordova part. Mobile app's require a com
+identifier/reverse style domain so we need to specify it here:
+
+```sh
+ember generate cordova-init com.reverse.domain
+```
+
+This will generate a base cordova iOS app and store it within the `cordova/`
+directory. If you would like to add other platforms, you can run the 
+`ember cordova` command:
+
+```sh
+ember cordova platform add android
 ```
 
 You must have [cordova](https://www.npmjs.org/package/cordova) installed
@@ -20,9 +35,14 @@ globally for this command to work.
 
 # Usage
 
+## Blueprints
++ `ember g cordova-init com.reverse.domain platform:android` Required generator
+  that sets up the cordova project with a few tweaks to the ember app
++ `ember g cordova-starter-kit` Adds some packages and files that makes up the
+  base setup for projects I develop.
+
 ## Commands
-+ `ember cordova:init com.poetic.myapp --platform ios` initialize cordova project
-+ `ember cordova:open` open cordova xcode project
++ `ember cordova:open` open xcode project
 + `ember cordova:build --environment production --platform ios` build cordova project
 + `ember cordova:archive 0.0.2 --environment staging --commit --tag` archive ios project with xcode
 + `ember cordova:prepare` needs to be run after cloning a project
@@ -31,9 +51,8 @@ globally for this command to work.
 
 ### General
 In the root folder you can run standard ember-cli commands and develop in the
-browser. Most cordova commands you need are wrapped in some way by ember-cli-cordova,
-if you need to run raw commands you will need to cd into the `cordova/`
-directory
+browser. All cordova commands you need are wrapped by ember-cli-cordova, see the
+above section on commands for help.
 
 **Recommended Workflow**
 Develop as much as you can in the browser because it provides the quickest
@@ -41,7 +60,7 @@ feedback. Every now and then build the cordova version and make sure it's
 working properly.
 
 If you are working with a native plugin and need the app in the simulator,
-enable the rebuild in the configuration described below.
+enable the rebuild option in the configuration as described below.
 
 ### Running in the simulator
 If you do not have rebuildOnChange enabled(described in the configuration
@@ -125,10 +144,6 @@ automatically generates some info it needs to archive the project. To fix this,
 run `ember cordova:open` and let it open in Xcode. After you have done this once you
 can just run the `archive` command again and it shouldn't give you any more
 trouble.
-
-# Potential gotchas
-
-+  locationType must be set to hash to work inside cordova
 
 # Contributing
 
