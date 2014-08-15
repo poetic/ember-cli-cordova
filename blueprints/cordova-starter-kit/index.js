@@ -16,7 +16,7 @@ module.exports = {
     }
   },
 
-  afterInstall: function(options) {
+  afterInstall: function() {
     return Promise.all([
       this.addPackageToProject('broccoli-sass'),
       this.addPackageToProject('ember-animated-outlet-mobile'),
