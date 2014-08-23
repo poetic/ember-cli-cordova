@@ -1,0 +1,44 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+
+# iOS
+cordova/platforms/ios/build/
+cordova/platforms/ios/www/
+cordova/platforms/ios/cordova/console.log
+*.xcuserdatad
+
+# android
+cordova/platforms/android/assets/www
+cordova/platforms/android/bin
+cordova/platforms/android/gen
+cordova/platforms/android/local.properties
+cordova/platforms/android/ant-build
+cordova/platforms/android/ant-gen
+cordova/platforms/android/CordovaLib/ant-build
+cordova/platforms/android/CordovaLib/ant-gen
+cordova/platforms/android/CordovaLib/bin
+cordova/platforms/android/CordovaLib/gen
+cordova/platforms/android/CordovaLib/local.properties
+
+# wp8
+cordova/platforms/wp8/bin
+cordova/platforms/wp8/obj
+cordova/platforms/wp8/www
+cordova/platforms/wp8/.staging
+cordova/platforms/wp8/*.suo
+cordova/platforms/wp8/*.csproj.user
