@@ -19,12 +19,13 @@
     "ember-addon"
   ],
   "dependencies": {
-    "fs-extra": "^0.8.1",
     "chalk": "^0.4.0",
-    "lodash": "^2.4.1",
     "findup-sync": "^0.1.3",
-    "rsvp": "^3.0.6",
+    "fs-extra": "^0.8.1",
+    "lodash": "^2.4.1",
+    "pleasant-progress": "^1.0.1",
     "recursive-readdir": "^1.1.1",
+    "rsvp": "^3.0.6",
     "underscore.string": "^2.3.3"
   },
   "devDependencies": {
