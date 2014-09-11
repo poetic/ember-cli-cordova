@@ -3,8 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   actions: {
     back: function() {
-      Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});
-      history.go(-1);
+      history.back();
     },
 
     closeModal: function() {

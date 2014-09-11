@@ -19,7 +19,7 @@ module.exports = {
   afterInstall: function() {
     return Promise.all([
       this.addPackageToProject('broccoli-sass'),
-      this.addPackageToProject('ember-animated-outlet-mobile'),
+      this.addPackageToProject('liquid-fire'),
     ]);
   }
 };
