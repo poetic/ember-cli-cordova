@@ -119,7 +119,7 @@ some info about some dependencies it uses.
 
 +  [ember-cli](http://iamstef.net/ember-cli/)
 +  [cordova](http://cordova.apache.org/docs/en/3.4.0/)
-+  [ember-animated-outlet](https://github.com/billysbilling/ember-animated-outlet)
++  [liquid-fire](https://github.com/ef4/liquid-fire)
 +  [moment.js](http://momentjs.com/docs/)
 
 # FAQ
