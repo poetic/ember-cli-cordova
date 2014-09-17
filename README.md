@@ -84,11 +84,6 @@ ENV.cordova = {
   // default: false
   rebuildOnChange: true, 
 
-  // Don't block the server during the rebuild
-  //
-  // default: false
-  rebuildAsync: true, 
-
   // Run the cordova emulate command after the build is finished
   //
   // default: false
