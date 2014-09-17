@@ -1,6 +1,9 @@
 # ember-cli-cordova [![Build Status](https://travis-ci.org/poetic/ember-cli-cordova.svg?branch=master)](https://travis-ci.org/poetic/ember-cli-cordova)
 
-*requires ember-cli >= 0.0.40*
+*requires latest ember-cli*
+I will not be focusing on backward compatibility with older ember-cli versions
+as it's moving too fast and the API is constantly changing. I will always have
+this working with the latest stable release of ember-cli though. 
 
 ## Goals
 
@@ -63,11 +66,21 @@ If you are working with a native plugin and need the app in the simulator,
 enable the rebuild option in the configuration as described below.
 
 ### Running in the simulator
+
+*with starter kit*
+Livereload is baked in by default. After the starter kit generator has run,
+simply run `ember serve --proxy http://your-local-ip:4300` and then `ember
+cordova emulate platform`(in another tab/split) to start up the app in the
+emulator. To find your local ip, reference [this LifeHacker
+article](http://lifehacker.com/5833108/how-to-find-your-local-and-external-ip-address)
+
+
+*without starter kit*
 If you do not have rebuildOnChange enabled(described in the configuration
 section), after making a change to the ember app, you must run `ember
 cordova:build` to update the build to contain those changes. You can then
-relaunch the app by building inside of xcode/eclipse or running `cordova emulate
-<platform>`
+relaunch the app by building inside of xcode/eclipse or running `ember cordova
+emulate <platform>`
 
 ### Configuration
 
@@ -83,11 +96,6 @@ ENV.cordova = {
   //
   // default: false
   rebuildOnChange: true, 
-
-  // Don't block the server during the rebuild
-  //
-  // default: false
-  rebuildAsync: true, 
 
   // Run the cordova emulate command after the build is finished
   //

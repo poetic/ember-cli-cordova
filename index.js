@@ -6,8 +6,17 @@ var postBuild = require('./lib/tasks/post-build');
 
 module.exports = {
   name: 'ember-cli-cordova',
-  init: function() {
-    this.setConfig();
+
+  treePaths: {
+    app:               'app',
+    styles:            'app/styles',
+    templates:         'app/templates',
+    addon:             'addon',
+    'addon-styles':    'addon/styles',
+    'addon-templates': 'addon/templates',
+    vendor:            'vendor',
+    'test-support':    'test-support',
+    'public':          'public'
   },
 
   blueprintsPath: function() {
@@ -18,18 +27,16 @@ module.exports = {
     return commands;
   },
 
-  setConfig: function(){
-    var env = this.project.config('development');
-    if(!this.config) {
-      this.config = {};
+  cdvConfig: function() {
+    var config = this.project.config('development');
+    if (config.cordova) {
+      return config.cordova
     }
 
-    if (env.cordova) {
-      this.config = env.cordova;
-    }
+    return {};
   },
 
   postBuild: function() {
-    return postBuild(this.project, this.config)();
+    return postBuild(this.project, this.cdvConfig())();
   }
 };

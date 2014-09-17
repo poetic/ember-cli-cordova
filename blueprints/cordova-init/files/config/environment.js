@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    modulePrefix: '<%= modulePrefix %>',
     environment: environment,
     baseURL: '/',
     locationType: 'hash',
@@ -18,8 +19,7 @@ module.exports = function(environment) {
     },
 
     cordova: {
-      rebuildOnChange: false,
-      rebuildAsync: false,
+      rebuildOnChange: true,
       emulate: false
     }
   };
@@ -33,7 +33,15 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
+    // Testem prefers this...
+    ENV.baseURL = '/';
+    ENV.locationType = 'auto';
 
+    // keep test console output quieter
+    ENV.APP.LOG_ACTIVE_GENERATION = false;
+    ENV.APP.LOG_VIEW_LOOKUPS = false;
+
+    ENV.APP.rootElement = '#ember-testing';
   }
 
   if (environment === 'production') {
