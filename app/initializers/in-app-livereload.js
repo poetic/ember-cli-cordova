@@ -4,8 +4,6 @@ import reloadInitializer from 'ember-cli-cordova/initializers/in-app-livereload'
 var inAppReload = reloadInitializer.initialize;
 
 export var initialize = function(container, app) {
-  console.log('inappreload initialize');
-
   if(typeof cordova === 'undefined' ||
       config.environment !== 'development') {
     return;
