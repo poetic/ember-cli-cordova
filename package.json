@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-cordova",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A tool for creating hybrid apps using a combination of ember-cli and cordova ",
   "homepage": "https://github.com/poetic/ember-cli-cordova",
   "repository": "https://github.com/poetic/ember-cli-cordova.git",
