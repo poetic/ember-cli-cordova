@@ -147,10 +147,10 @@ ld[10658:1007] WARNING: Timed out waiting for <IDEWorkspace,
 xcodebuild: error: The project 'MyApp' does not contain a scheme named 'MyApp'.
 ```
 
-This is caused by now having opened the project in Xcode before. It
+This is caused by not having opened the project in Xcode before. It
 automatically generates some info it needs to archive the project. To fix this,
-run `ember cordova:open` and let it open in Xcode. After you have done this once you
-can just run the `archive` command again and it shouldn't give you any more
+run `ember cordova:open` and let it open in Xcode. After you've done this once you
+can just run `ember cordova:archive` command again and it shouldn't give you any more
 trouble.
 
 # Contributing
