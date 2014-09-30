@@ -9,7 +9,7 @@ export var initialize = function(container, app) {
     return;
   }
 
-  return inAppReload(container, app);
+  return inAppReload(container, app, config);
 }
 
 export default {

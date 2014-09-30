@@ -5,7 +5,6 @@ export default function startProxyServer(location) {
   location = location.replace(/^file.*\/Documents/, '../../Documents');
 
   return new Ember.RSVP.Promise(function(resolve, reject) {
-    var cordovaRoot = decodeURI(window.location.href).replace(/\/index.html$/, '/').replace(/^file:\/\/?/, '');
     var httpd       = cordova && cordova.plugins && cordova.plugins.CorHttpd;
     var port        = 4300;
 
@@ -15,7 +14,7 @@ export default function startProxyServer(location) {
         reject(new Error('Giving up on starting the server.'));
       } else {
         console.log('Retrying to to start the server.');
-        startProxyServer(location);
+        startProxyServer(location).then(resolve, reject);
       }
     };
 

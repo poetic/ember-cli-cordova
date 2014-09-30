@@ -1,9 +1,10 @@
 # ember-cli-cordova [![Build Status](https://travis-ci.org/poetic/ember-cli-cordova.svg?branch=master)](https://travis-ci.org/poetic/ember-cli-cordova)
 
-*requires latest ember-cli*
+*requires latest ember-cli >= 0.0.46*
+
 I will not be focusing on backward compatibility with older ember-cli versions
 as it's moving too fast and the API is constantly changing. I will always have
-this working with the latest stable release of ember-cli though. 
+this working with the latest stable release of ember-cli.
 
 ## Goals
 
@@ -57,7 +58,8 @@ In the root folder you can run standard ember-cli commands and develop in the
 browser. All cordova commands you need are wrapped by ember-cli-cordova, see the
 above section on commands for help.
 
-**Recommended Workflow**
+#### Recommended Workflow
+
 Develop as much as you can in the browser because it provides the quickest
 feedback. Every now and then build the cordova version and make sure it's
 working properly.
@@ -67,15 +69,14 @@ enable the rebuild option in the configuration as described below.
 
 ### Running in the simulator
 
-*with starter kit*
+#### With starter kit
 Livereload is baked in by default. After the starter kit generator has run,
-simply run `ember serve --proxy http://your-local-ip:4300` and then `ember
+simply run `ember serve --proxy http://your-device-ip:4300` and then `ember
 cordova emulate platform`(in another tab/split) to start up the app in the
-emulator. To find your local ip, reference [this LifeHacker
-article](http://lifehacker.com/5833108/how-to-find-your-local-and-external-ip-address)
+emulator.
 
+#### Without starter kit
 
-*without starter kit*
 If you do not have rebuildOnChange enabled(described in the configuration
 section), after making a change to the ember app, you must run `ember
 cordova:build` to update the build to contain those changes. You can then
@@ -87,32 +88,34 @@ emulate <platform>`
 All configuration is currently optional. Configuration will be done in your
 app's config/environment.js file. You need to set it up like this: 
 
-*All options are related to the rebuild process.*
-
 ```js
 ENV.cordova = {
   // Rebuild the cordova project on file changes. Blocks the server until it's
   // finished.
   //
   // default: false
-  rebuildOnChange: true, 
+  rebuildOnChange: true,
 
   // Run the cordova emulate command after the build is finished
   //
   // default: false
-  emulate: true 
+  emulate: true
 
   // Which platform to build and/or emulate
   //
   // default: 'ios'
-  platform: 'ios' 
+  platform: 'ios'
+
+  // Which URL the ember server is running on. This is used when using
+  // live-reload that comes with the starter kit.
+  //
+  // default: 'the-device-ip:4200'
+  emberUrl: 'http://10.0.1.12:4200'
 };
 ```
 
-I recommend only enabling this when you need it. It takes awhile to rebuild and
-will slow everything down. The rebuild option is most useful when developing or
-working with a cordova plugin when you need the javascript updated along with
-the native component.
+The rebuild option is most useful when developing or working with a cordova
+plugin when you need the javascript updated along with the native component.
 
 ### Builds
 
@@ -135,7 +138,8 @@ some info about some dependencies it uses.
 #### I am getting `Current working directory is not a Cordova-based project.` when I run a cordova command
 
 If you are running a cli command, make sure the dist directory exists. You can
-run `ember build` to create it if it doesnt.
+run `ember build` to create it if it doesnt. You can also try to run `ember
+cordova:prepare`
 
 #### When running `ember cordova:archive` command I get an Xcode build error saying the scheme doesnt exist
 
