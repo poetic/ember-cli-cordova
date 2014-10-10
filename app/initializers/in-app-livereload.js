@@ -5,7 +5,8 @@ var inAppReload = reloadInitializer.initialize;
 
 export var initialize = function(container, app) {
   if(typeof cordova === 'undefined' ||
-      config.environment !== 'development') {
+      config.environment !== 'development' ||
+      (config.cordova && !config.cordova.liveReload)) {
     return;
   }
 

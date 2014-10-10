@@ -33,7 +33,8 @@ module.exports = function(environment) {
     cordova: {
       rebuildOnChange: true,
       emulate: false,
-      emberUrl: 'http://' + addresses[0] + ':4200';
+      emberUrl: 'http://' + addresses[0] + ':4200',
+      liveReload: false
     }
   };
 
