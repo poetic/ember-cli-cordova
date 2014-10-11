@@ -1,5 +1,3 @@
-var noop = require('../../helpers/noop');
-
 describe('Tasks - Cordova', function() {
   it('creates a proper command', function() {
     var cordova = proxyquire('../../lib/tasks/cordova', {
@@ -9,7 +7,7 @@ describe('Tasks - Cordova', function() {
       },
     });
 
-    cordova(['plugins', 'add', 'org.apache.test'], { root: 'test' })();
+    return cordova(['plugins', 'add', 'org.apache.test'], { root: 'test' })();
   });
 
   it('executes in proper directory', function() {
@@ -20,6 +18,6 @@ describe('Tasks - Cordova', function() {
       },
     });
 
-    cordova(['plugins', 'add', 'org.apache.test'], { root: 'test' })();
+    return cordova(['plugins', 'add', 'org.apache.test'], { root: 'test' })();
   });
 });

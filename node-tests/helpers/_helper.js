@@ -4,3 +4,16 @@ global.expect = require('chai').expect;
 global.proxyquire = require('proxyquire');
 
 global.Promise = require('../../lib/ext/promise');
+global.noop    = require('./noop');
+
+global.resolveFn = function() { return Promise.resolve() };
+
+global.newProject = function() {
+  return {
+    cordovaConfig: {
+      id: 'com.poetic.test-app',
+      name: 'TestApp'
+    },
+    root: 'project-root'
+  }
+}

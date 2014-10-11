@@ -6,7 +6,7 @@ describe('Tasks - Add Platforms', function() {
       }
     });
 
-    addPlatforms({root: 'test'}, {platform: 'some-platform'});
+    return addPlatforms({root: 'test'}, {platform: 'some-platform'});
   });
 
   it('executes command in cordova directory', function() {
@@ -16,6 +16,6 @@ describe('Tasks - Add Platforms', function() {
       }
     });
 
-    addPlatforms({root: 'test'}, {platform: 'some-platform'});
+    return addPlatforms({root: 'test'}, {platform: 'some-platform'});
   });
 });
