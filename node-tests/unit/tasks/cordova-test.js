@@ -7,7 +7,7 @@ describe('Tasks - Cordova', function() {
       },
     });
 
-    cordova(['plugins', 'add', 'org.apache.test'], { root: 'test' })();
+    return cordova(['plugins', 'add', 'org.apache.test'], { root: 'test' })();
   });
 
   it('executes in proper directory', function() {
@@ -18,6 +18,6 @@ describe('Tasks - Cordova', function() {
       },
     });
 
-    cordova(['plugins', 'add', 'org.apache.test'], { root: 'test' })();
+    return cordova(['plugins', 'add', 'org.apache.test'], { root: 'test' })();
   });
 });
