@@ -1,14 +1,7 @@
 describe('Tasks - Open', function() {
   var project;
-
   beforeEach(function() {
-    project = {
-      cordovaConfig: {
-        id: 'com.poetic.test-app',
-        name: 'TestApp'
-      },
-      root: 'project-root'
-    };
+    project = newProject();
   });
 
   describe('darwin', function() {

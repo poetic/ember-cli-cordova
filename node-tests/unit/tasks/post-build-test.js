@@ -1,21 +1,9 @@
-var noop = require('../../helpers/noop');
-var RSVP = require('rsvp');
-
-var resolveFn = function() { return RSVP.resolve() };
-
 var uiMock = { write: noop };
 
 describe('Tasks - Post Build', function() {
   var project;
-
   beforeEach(function() {
-    project = {
-      cordovaConfig: {
-        id: 'com.poetic.test-app',
-        name: 'TestApp'
-      },
-      root: 'project-root'
-    };
+    project = newProject();
   });
 
   var options;

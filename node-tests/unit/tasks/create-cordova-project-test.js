@@ -1,19 +1,7 @@
-var noop = require('../../helpers/noop');
-var RSVP = require('rsvp');
-
-var resolveFn = function() { return RSVP.resolve() };
-
 describe('Tasks - Create cordova project', function() {
   var project;
-
   beforeEach(function() {
-    project = {
-      cordovaConfig: {
-        id: 'com.poetic.test-app',
-        name: 'TestApp'
-      },
-      root: 'project-root'
-    };
+    project = newProject();
   });
 
   it('creates the proper command', function() {

@@ -1,5 +1,3 @@
-var noop = require('../../helpers/noop');
-
 describe('Tasks - Cordova', function() {
   it('creates a proper command', function() {
     var cordova = proxyquire('../../lib/tasks/cordova', {

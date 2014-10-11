@@ -1,14 +1,7 @@
 describe('Tasks - Verify Dist', function() {
   var project;
-
   beforeEach(function() {
-    project = {
-      cordovaConfig: {
-        id: 'com.poetic.test-app',
-        name: 'TestApp'
-      },
-      root: 'project-root'
-    };
+    project = newProject();
   });
 
   it('resolves when path exists', function() {
