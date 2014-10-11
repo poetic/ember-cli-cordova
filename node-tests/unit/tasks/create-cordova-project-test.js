@@ -1,3 +1,8 @@
+var noop = require('../../helpers/noop');
+var RSVP = require('rsvp');
+
+var resolveFn = function() { return RSVP.resolve() };
+
 describe('Tasks - Create cordova project', function() {
   var project;
 
@@ -13,21 +18,27 @@ describe('Tasks - Create cordova project', function() {
 
   it('creates the proper command', function() {
     var createProject = proxyquire('../../lib/tasks/create-cordova-project', {
-      '../utils/run-command': function(command) {
-        expect(command).to.contain('create cordova com.poetic.test-app TestApp');
-      }
+      './cordova': proxyquire('../../lib/tasks/cordova', {
+        '../utils/run-command': function(command) {
+          expect(command).to.eql('cordova create cordova com.poetic.test-app TestApp');
+          return resolveFn;
+        }
+      })
     });
 
-    createProject(project);
+    return createProject(project)();
   });
 
   it('should execute in proper folder', function() {
     var createProject = proxyquire('../../lib/tasks/create-cordova-project', {
-      '../utils/run-command': function(_, __, options) {
-        expect(options.cwd).to.equal('project-root');
-      }
+      './cordova': proxyquire('../../lib/tasks/cordova', {
+        '../utils/run-command': function(_, _, options) {
+          expect(options.cwd).to.equal('project-root/cordova');
+          return resolveFn;
+        }
+      })
     });
 
-    createProject(project);
+    return createProject(project)();
   });
 });
