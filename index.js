@@ -19,6 +19,12 @@ module.exports = {
     'public':          'public'
   },
 
+  contentFor: function(type) {
+    if(type === 'body') {
+      return '<script src="cordova.js"></script>';
+    }
+  },
+
   blueprintsPath: function() {
     return path.join(__dirname, 'blueprints');
   },

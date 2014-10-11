@@ -8,15 +8,7 @@ module.exports = {
 
     projectWithConfig(this.project, options.entity.name);
 
-    var setup = this.setupEmber().then(this.setupCordova.bind(this));
-
-    return Promise.all([setup]);
-  },
-
-  setupEmber: function() {
-    var updateIndexHtml    = require('../../lib/tasks/update-index-html')(this.project);
-
-    return updateIndexHtml();
+    return this.setupCordova();
   },
 
   setupCordova: function() {
