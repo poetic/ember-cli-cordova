@@ -1,4 +1,4 @@
-describe.only('Tasks - Build', function() {
+describe('Tasks - Build', function() {
   var project, commandOffset;
   beforeEach(function() {
     project       = newProject();
