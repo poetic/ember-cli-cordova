@@ -11,7 +11,7 @@ export var initialize = function(container, app, config) {
   }).finally(function() {
     app.advanceReadiness();
   });
-}
+};
 
 export default {
   name: 'cordova:in-app-livereload',

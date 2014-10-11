@@ -171,6 +171,7 @@ trouble.
 ``` sh
 git clone https://github.com/poetic/ember-cli-cordova.git
 cd ember-cli-cordova
+npm i && bower i
 npm link
 ember new CordovaTest
 cd CordovaTest

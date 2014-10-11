@@ -1,5 +1,15 @@
 language: node_js
-node_js:
-  - "0.10.26"
-  - "0.11"
-script: npm test
+
+sudo: false
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install -g bower
+  - npm install
+  - bower install
+
+script:
+  - npm test
