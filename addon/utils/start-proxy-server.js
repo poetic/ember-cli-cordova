@@ -1,3 +1,4 @@
+/* globals cordova */
 import Ember from 'ember';
 
 var loadTries = 0;
@@ -33,4 +34,4 @@ export default function startProxyServer(location) {
       }
     }, retry);
   });
-};
+}

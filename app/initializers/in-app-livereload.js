@@ -1,3 +1,5 @@
+/* globals cordova */
+
 import config from '../config/environment';
 import reloadInitializer from 'ember-cli-cordova/initializers/in-app-livereload';
 
@@ -11,7 +13,7 @@ export var initialize = function(container, app) {
   }
 
   return inAppReload(container, app, config);
-}
+};
 
 export default {
   name: 'cordova:in-app-livereload',

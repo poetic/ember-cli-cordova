@@ -6,14 +6,14 @@
   "repository": "https://github.com/poetic/ember-cli-cordova.git",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require tests/helpers/_helper.js --reporter spec tests/**/*-test.js",
-    "test-all": "mocha --require tests/helpers/_helper.js --reporter spec tests/**/*-test.js",
-    "autotest": "mocha --watch --require tests/helpers/_helper.js --reporter spec tests/**/**/*-test.js"
+    "node-test": "mocha --require node-tests/helpers/_helper.js --reporter spec node-tests/**/*-test.js",
+    "ember-test": "ember test",
+    "test": "npm run node-test && npm run ember-test"
   },
   "author": "Jake Craige <jake@poeticsystems.com>",
   "license": "MIT",
   "ember-addon": {
-    "main": "index"
+    "configPath": "tests/dummy/config"
   },
   "keywords": [
     "ember-addon"
@@ -34,6 +34,12 @@
     "chai": "^1.9.1",
     "tmp-sync": "^1.0.1",
     "proxyquire": "^1.0.1",
-    "glob": "^4.0.5"
+    "glob": "^4.0.5",
+    "broccoli-asset-rev": "0.0.17",
+    "broccoli-ember-hbs-template-compiler": "^1.6.1",
+    "ember-cli": "0.1.1",
+    "ember-cli-ic-ajax": "0.1.1",
+    "ember-cli-qunit": "0.1.0",
+    "ember-data": "1.0.0-beta.10"
   }
 }
