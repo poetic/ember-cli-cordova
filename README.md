@@ -1,6 +1,6 @@
 # ember-cli-cordova [![Build Status](https://travis-ci.org/poetic/ember-cli-cordova.svg?branch=master)](https://travis-ci.org/poetic/ember-cli-cordova)
 
-*requires latest ember-cli >= 0.0.46*
+*requires at least ember-cli >= 0.1.1*
 
 I will not be focusing on backward compatibility with older ember-cli versions
 as it's moving too fast and the API is constantly changing. I will always have
