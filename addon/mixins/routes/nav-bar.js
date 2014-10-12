@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Mixin.create({
   afterModel: function() {
-    var ctrl = this.controllerFor(this.get('navController') || 'application');
+    var ctrl = this.controllerFor(this.get('nav.controller') || 'application');
 
     this._setNavOptions(ctrl);
     this._setNavActions(ctrl);

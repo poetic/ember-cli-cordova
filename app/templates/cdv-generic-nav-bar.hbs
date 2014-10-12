@@ -7,9 +7,11 @@
   </button>
 {{/if}}
 
-<h1>
-  {{nav.titleText}}
-</h1>
+{{#if nav.titleText}}
+  <h1>
+    {{nav.titleText}}
+  </h1>
+{{/if}}
 
 {{#if nav.rightButtonText}}
   <button {{action 'rightButton'}}>
