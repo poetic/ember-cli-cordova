@@ -42,21 +42,27 @@ export default Ember.Route.extend(NavBarMixin, {
     // template this needs to be set to that
     controller: 'application',
 
-    // The text to display on the nav-bar
-    titleText: 'Title',
-    leftButtonText: 'iLeft',
-    rightButtonText: 'iRight',
+    title: {
+      text: 'Title'
+    },
 
-    // Class of an icon to display
-    leftButtonIcon: 'back',
-    rightButtonIcon: 'save',
+    leftButton: {
+      // Text to show
+      text: 'iLeft',
+      // Class of an icon to display
+      icon: 'save',
 
-    // Actions to be called when the buttons are pressed. They will be called in
-    // the context of the route so you can access anything you need from `this`.
-    actions: {
-      leftButton: function() { },
-      rightButton: function() { }
-    }
+      // Action to trigger when it is clicked. It will trigger in the context of
+      // the route so you have access to the correct `this`.
+      action: function() {
+        
+      }
+    },
+
+    // Same options as leftButton
+    rightButton: {
+      // ...
+    },
   }
 });
 ```

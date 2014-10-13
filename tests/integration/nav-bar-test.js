@@ -29,15 +29,23 @@ describeApp('Integration - Nav Bar', function() {
         var spec     = this;
 
         spec.navIndexStub = sinon.stub();
-        navIndex.set('nav.actions', {
-          leftButton: function() { spec.navIndexStub('left'); },
-          rightButton: function() { spec.navIndexStub('right'); }
+        navIndex.setProperties({
+          'nav.leftButton.action': function() {
+            spec.navIndexStub('left');
+          },
+          'nav.rightButton.action': function() {
+            spec.navIndexStub('right');
+          }
         });
 
         spec.page1Stub = sinon.stub();
-        page1.set('nav.actions', {
-          leftButton: function() { spec.page1Stub('left'); },
-          rightButton: function() { spec.page1Stub('right'); }
+        page1.setProperties({
+          'nav.leftButton.action': function() {
+            spec.page1Stub('left');
+          },
+          'nav.rightButton.action': function() {
+            spec.page1Stub('right');
+          }
         });
       });
 
