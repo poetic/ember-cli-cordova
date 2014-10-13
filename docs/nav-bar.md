@@ -42,20 +42,29 @@ export default Ember.Route.extend(NavBarMixin, {
     // template this needs to be set to that
     controller: 'application',
 
+
+    // The text or icon option for title, leftButton, or rightButton can be
+    // a string or function. If it's a function // it will be called in the
+    // context of the afterModel hook and have the // model passed in as an
+    // argument
+
     title: {
       text: 'Title'
     },
 
     leftButton: {
       // Text to show
-      text: 'iLeft',
+      text: function(model) {
+        return model.get('title');
+      },
+
       // Class of an icon to display
       icon: 'save',
 
       // Action to trigger when it is clicked. It will trigger in the context of
       // the route so you have access to the correct `this`.
       action: function() {
-        
+        // ...
       }
     },
 

@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
-  afterModel: function() {
+  afterModel: function(model) {
     var ctrl = this.controllerFor(this.get('nav.controller') || 'application');
 
     this._setDefaults(ctrl);
-    this._setNavOptions(ctrl);
+    this._setNavOptions(ctrl, model);
     this._setNavActions(ctrl);
 
     return this._super.apply(this, arguments);
@@ -32,7 +32,7 @@ export default Ember.Mixin.create({
     }
   },
 
-  _setNavOptions: function(ctrl) {
+  _setNavOptions: function(ctrl, model) {
     var navOptions = Ember.A([
       'title.text',
       'leftButton.text', 'leftButton.icon',
@@ -44,6 +44,10 @@ export default Ember.Mixin.create({
       var value      = this.get(optionPath);
 
       if (value) {
+        if(Ember.typeOf(value) === 'function') {
+          value = value.call(this, model);
+        }
+
         ctrl.set(optionPath, value);
       }
     }, this);
@@ -54,7 +58,6 @@ export default Ember.Mixin.create({
       var actionPath = 'nav.' + button + '.action';
 
       var action = this.get(actionPath);
-      console.log(actionPath, action);
       if (action) {
         ctrl.set(actionPath, action.bind(this));
       }

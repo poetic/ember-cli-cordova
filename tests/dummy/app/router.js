@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.resource('nav-bar', function() {
     this.route('page-1');
+    this.route('options-from-model');
   });
 });
 
