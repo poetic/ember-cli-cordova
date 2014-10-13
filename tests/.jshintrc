@@ -51,7 +51,8 @@
     "after",
     "it",
     "lazy",
-    "helper"
+    "helper",
+    "sinon"
   ],
   "node": false,
   "browser": false,
