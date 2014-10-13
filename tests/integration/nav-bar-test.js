@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import describeApp from '../helpers/describe-app';
 
 describeApp('Integration - Nav Bar', function() {
@@ -72,33 +73,33 @@ describeApp('Integration - Nav Bar', function() {
 
         click('header button:first');
 
-        andThen(function() {
+        andThen(Ember.run.bind(this, function() {
           ok(this.navIndexStub.calledWith('left'));
           ok(!this.navIndexStub.calledWith('right'));
-        }.bind(this));
+        }));
 
         click('header button:last');
 
-        andThen(function() {
+        andThen(Ember.run.bind(this, function() {
           ok(this.navIndexStub.calledWith('left'));
           ok(this.navIndexStub.calledWith('right'));
-        }.bind(this));
+        }));
 
         visit('nav-bar/page-1');
 
         click('header button:first');
 
-        andThen(function() {
+        andThen(Ember.run.bind(this, function() {
           ok(this.page1Stub.calledWith('left'));
           ok(!this.page1Stub.calledWith('right'));
-        }.bind(this));
+        }));
 
         click('header button:last');
 
-        andThen(function() {
+        andThen(Ember.run.bind(this, function() {
           ok(this.page1Stub.calledWith('left'));
           ok(this.page1Stub.calledWith('right'));
-        }.bind(this));
+        }));
       });
     });
   });

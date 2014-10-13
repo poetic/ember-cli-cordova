@@ -59,7 +59,7 @@ export default Ember.Mixin.create({
 
       var action = this.get(actionPath);
       if (action) {
-        ctrl.set(actionPath, action.bind(this));
+        ctrl.set(actionPath, Ember.run.bind(this, action));
       }
     }, this);
   }
