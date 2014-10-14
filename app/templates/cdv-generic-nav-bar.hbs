@@ -1,0 +1,23 @@
+{{#if nav.leftButton.text}}
+  <button {{action 'leftButton'}}>
+    {{#if nav.leftButton.icon}}
+      <i {{bind-attr class=":icon nav.leftButton.icon"}}></i>
+    {{/if}}
+    {{nav.leftButton.text}}
+  </button>
+{{/if}}
+
+{{#if nav.title.text}}
+  <h1>
+    {{nav.title.text}}
+  </h1>
+{{/if}}
+
+{{#if nav.rightButton.text}}
+  <button {{action 'rightButton'}}>
+    {{#if nav.rightButton.icon}}
+      <i {{bind-attr class=":icon nav.rightButton.icon"}}></i>
+    {{/if}}
+    {{nav.rightButton.text}}
+  </button>
+{{/if}}

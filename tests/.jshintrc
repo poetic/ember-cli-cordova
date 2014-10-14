@@ -45,7 +45,14 @@
     "currentURL",
     "currentPath",
     "currentRouteName",
-    "cordova"
+    "cordova",
+    "describe",
+    "before",
+    "after",
+    "it",
+    "lazy",
+    "helper",
+    "sinon"
   ],
   "node": false,
   "browser": false,

@@ -129,16 +129,15 @@ don't have liveReload enabled.
 To build for different environments you run the `ember cordova:build` command with
 the options you want
 
-# Docs / Guides
+# Docs
 
-This project is mostly a combination of other projects, I plan on writing some
-guides on the basic of how to use it and what it contains, until then here is
-some info about some dependencies it uses.
+Documentation can be found found in the docs directory [here](https://github.com/poetic/ember-cli-cordova/tree/master/docs).
 
-+  [ember-cli](http://iamstef.net/ember-cli/)
-+  [cordova](http://cordova.apache.org/docs/en/3.4.0/)
+# Dependency Docs
+
++  [ember-cli](http://ember-cli.com)
++  [cordova](http://cordova.apache.org/docs/en/3.6.0/)
 +  [liquid-fire](https://github.com/ef4/liquid-fire)
-+  [moment.js](http://momentjs.com/docs/)
 
 # FAQ
 
