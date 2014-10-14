@@ -1,25 +1,27 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
-  afterModel: function(model) {
-    var ctrl = this.controllerFor(this.get('nav.controller') || 'application');
+  _navController: Ember.computed('nav.controller', function() {
+    var name = this.get('nav.controller') || 'application';
 
-    this._setDefaults(ctrl);
-    this._setNavOptions(ctrl, model);
-    this._setNavActions(ctrl);
+    return this.controllerFor(name);
+  }),
+
+  afterModel: function(model) {
+    this._setDefaults();
+    this._setNavOptions(model);
+    this._setNavActions();
 
     return this._super.apply(this, arguments);
   },
 
   // Since we are using so many nested paths this makes sure they are set to
   // null values
-  _setDefaults: function(ctrl) {
+  _setDefaults: function() {
+    var ctrl = this.get('_navController');
+
     if(!ctrl.get('nav')) {
-      ctrl.set('nav', {
-        title: {},
-        leftButton: {},
-        rightButton: {}
-      });
+      ctrl.send('resetNavBar');
 
     } else if(!ctrl.get('nav.title')) {
       ctrl.set('nav.title', {});
@@ -32,7 +34,9 @@ export default Ember.Mixin.create({
     }
   },
 
-  _setNavOptions: function(ctrl, model) {
+  _setNavOptions: function(model) {
+    var ctrl = this.get('_navController');
+
     var navOptions = Ember.A([
       'title.text',
       'leftButton.text', 'leftButton.icon',
@@ -53,7 +57,9 @@ export default Ember.Mixin.create({
     }, this);
   },
 
-  _setNavActions: function(ctrl) {
+  _setNavActions: function() {
+    var ctrl = this.get('_navController');
+
     Ember.A(['leftButton', 'rightButton']).forEach(function(button) {
       var actionPath = 'nav.' + button + '.action';
 
@@ -62,5 +68,12 @@ export default Ember.Mixin.create({
         ctrl.set(actionPath, Ember.run.bind(this, action));
       }
     }, this);
+  },
+
+  actions: {
+    willTransition: function() {
+      this.get('_navController').send('resetNavBar');
+      return this._super.apply(this, arguments);
+    }
   }
 });

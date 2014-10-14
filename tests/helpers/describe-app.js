@@ -15,6 +15,10 @@ export default function(name, callback) {
       return this.app.__container__.lookup('store:main');
     });
 
+    helper('lookupController', function(name) {
+      return this.app.__container__.lookup('controller:' + name);
+    });
+
     callback.call(this);
   });
 }

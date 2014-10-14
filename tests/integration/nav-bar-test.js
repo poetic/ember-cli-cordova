@@ -102,5 +102,26 @@ describeApp('Integration - Nav Bar', function() {
         }));
       });
     });
+
+    describe('willTransiton reset', function() {
+      it('resets nav options on transition', function() {
+        visit('nav-bar');
+
+        andThen(function() {
+          equal(find('header h1').text().trim(), 'Index');
+        });
+
+        visit('nav-bar/should-reset');
+
+        andThen(Ember.run.bind(this, function() {
+          var ctrl = this.lookupController('nav-bar');
+
+          equal(find('header h1').text().trim(), '');
+          equal(find('header button:first').text().trim(), '');
+          equal(find('header button:last').text().trim(), '');
+          deepEqual(ctrl.get('nav'), {title: {}, leftButton: {}, rightButton: {}});
+        }));
+      });
+    });
   });
 });

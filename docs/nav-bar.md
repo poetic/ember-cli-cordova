@@ -21,7 +21,8 @@ Add this in your application template
 ```
 
 In your application controller, mixin the controller NavBarMixin. If you don't
-do this, the actions within the nav-bar won't work
+do this, the actions within the nav-bar won't work. This is where all state for
+the nav bar lives.
 
 ```js
 import NavBarMixin from 'ember-cli-cordova/mixins/controllers/nav-bar';
@@ -30,7 +31,9 @@ export default Ember.Controller.extend(NavBarMixin);
 ```
 
 Then in any route you can mixin the route NavBarMixin and set options for the
-nav bar. All options are optional.
+nav bar. The options will be reset on each transition. This is implemented using
+ember's
+[willTransition](http://emberjs.com/api/classes/Ember.Route.html#event_willTransition) in the route. All options are optional.
 
 ```js
 import NavBarMixin from 'ember-cli-cordova/mixins/route/nav-bar';
