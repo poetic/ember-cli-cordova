@@ -31,10 +31,13 @@ module.exports = function(environment) {
     },
 
     cordova: {
-      rebuildOnChange: true,
+      rebuildOnChange: false,
       emulate: false,
       emberUrl: 'http://' + addresses[0] + ':4200',
-      liveReload: false
+      liveReload: {
+        enabled: false,
+        platform: 'ios'
+      }
     }
   };
 

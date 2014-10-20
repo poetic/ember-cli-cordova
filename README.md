@@ -70,10 +70,15 @@ enable the rebuild option in the configuration as described below.
 ### Running in the simulator
 
 #### With starter kit live reload
-Livereload disabled by default. To enable it, set it to true in the your app's
-config. After the starter kit generator has run, simply run `ember serve --proxy
-http://your-device-ip:4300` and then `ember cordova emulate platform`(in another
-tab/split) to start up the app in the emulator.
+Livereload disabled by default. To enable it, set it up in your app's
+config. After the starter kit generator has run, simply run `ember serve` and 
+then `ember cordova emulate platform`(in another tab/split) to start up the 
+app in the emulator. 
+
+When it is enabled, your app will not start up in the real browser. This is
+because cordova hijacks the browser events and the app is never told to start.
+If you need it to start, just call `AppName.advanceReadiness()` in the browser
+once it's loaded. (We will try and get a fix for this soon)
 
 #### Without starter kit live reload
 
@@ -113,10 +118,14 @@ ENV.cordova = {
   emberUrl: 'http://10.0.1.12:4200',
 
   // Whether or not to use liveReload on the device simulator. Requires a few
-  // plugins to be installed that come with the starter-kit
+  // plugins to be installed that come with the starter-kit. It will cause your
+  // app to not boot up in the browser
   //
-  // default: false
-  liveReload: true
+  // default: false and iOS
+  liveReload: {
+    enabled: false,
+    platform: 'ios'
+  }
 };
 ```
 

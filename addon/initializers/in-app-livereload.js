@@ -3,14 +3,8 @@ import redirect from '../utils/redirect';
 import startProxy from '../utils/start-proxy-server';
 
 export var initialize = function(container, app, config) {
-  return deferReadiness(app).then(function() {
-    return startProxy('').then(function(url) {
-      return config.cordova.emberUrl || url.replace('4300', '4200');
-    }).then(redirect);
-
-  }).finally(function() {
-    app.advanceReadiness();
-  });
+  var url = config.cordova.emberUrl || 'http://localhost:4200';
+  return redirect(url);
 };
 
 export default {

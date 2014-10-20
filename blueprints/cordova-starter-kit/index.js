@@ -31,22 +31,10 @@ module.exports = {
     });
   },
 
-  // TODO: this should be cleaned up. I needs to run in series though
-  addPlugins: function() {
-    return this.addPluginToProject('org.apache.cordova.file-transfer').then(function() {
-      this.addPluginToProject('org.apache.cordova.file');
-    }.bind(this)).then(function() {
-      this.addPluginToProject('https://github.com/MobileChromeApps/zip.git');
-    }.bind(this)).then(function() {
-      this.addPluginToProject('https://github.com/floatinghotpot/cordova-httpd.git');
-    }.bind(this));
-  },
-
   afterInstall: function() {
     return Promise.all([
       this.addPackageToProject('broccoli-sass'),
-      this.addPackageToProject('liquid-fire'),
-      this.addPlugins()
+      this.addPackageToProject('liquid-fire')
     ]);
   }
 };
