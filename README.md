@@ -62,31 +62,52 @@ above section on commands for help.
 
 Develop as much as you can in the browser because it provides the quickest
 feedback. Every now and then build the cordova version and make sure it's
-working properly.
+working properly. You can use the Livereload option to get instant feedback on
+the device or in the simulator.
 
 If you are working with a native plugin and need the app in the simulator,
 enable the rebuild option in the configuration as described below.
 
 ### Running in the simulator
 
-#### With starter kit live reload
-Livereload disabled by default. To enable it, set it up in your app's
-config. After the starter kit generator has run, simply run `ember serve` and 
-then `ember cordova emulate platform`(in another tab/split) to start up the 
-app in the emulator. 
-
-When it is enabled, your app will not start up in the real browser. This is
-because cordova hijacks the browser events and the app is never told to start.
-If you need it to start, just call `AppName.advanceReadiness()` in the browser
-once it's loaded. (We will try and get a fix for this soon)
-
-#### Without starter kit live reload
-
-If you do not have rebuildOnChange enabled(described in the configuration
-section), after making a change to the ember app, you must run `ember
+After making a change to the ember app or native plugins, you must run `ember
 cordova:build` to update the build to contain those changes. You can then
 relaunch the app by building inside of xcode/eclipse or running `ember cordova
-emulate <platform>`
+emulate <platform>`. If you are using the Livereload option, you only need to
+build after environment changes or native changes.
+
+### App Livereload
+
+Livereload is enabled by default on your device or simulator build. This is
+because cordova.js overwrites some browser listeners and when it's enabled the
+app will not start automatically in the browser. If you need it to start, just
+call `AppName.advanceReadiness()` in the browser once it's loaded. (We will try
+and get a fix for this soon)
+
+When you need to build and run it on the device, you can enable it in the
+config. See the section below for the options.
+
+#### How to use it
+
+1. Enable it in the config
+2. run `ember cordova:build`
+3. run `ember serve`
+4. In a new terminal, run 'ember cordova emulate ios'
+5. Now with the server running, your device should live reload when you make
+   changes
+
+#### Notes
+
+- You will need to rebuild the cordova build when you make changes to the
+  environment. Specifically when you change the liveReload settings. Though this
+  is always good practice.
+- When you add/remove/update plugins or native code you will also need to run
+  the cordova build.
+- You will need to set the `emberUrl` in the config if you are running the app
+  on a device that is not on the same computer or on a different port. It
+  defaults to `http://localhost:4200`
+- This is a fairly new feature and we are really excited about it. If you have
+  any trouble with it please submit an issue or PR so that we can resolve it.
 
 ### Configuration
 

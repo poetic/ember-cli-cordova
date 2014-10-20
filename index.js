@@ -60,7 +60,8 @@ module.exports = {
       });
 
       console.log(chalk.green('Device LiveReload is enabled'));
-      console.log(chalk.yellow('Your app will only boot in the simulator or on a device - https://github.com/poetic/ember-cli-cordova#configuration'));
+      console.log(chalk.yellow('Your app will only boot in the simulator or on a device - https://github.com/poetic/ember-cli-cordova#app-livereload'));
+
       return this.mergeTrees([tree, pluginsTree]);
     }
 
