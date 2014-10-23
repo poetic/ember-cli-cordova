@@ -6,12 +6,10 @@ describe('Tasks - Create cordova project', function() {
 
   it('creates the proper command', function() {
     var createProject = proxyquire('../../lib/tasks/create-cordova-project', {
-      './cordova': proxyquire('../../lib/tasks/cordova', {
-        '../utils/run-command': function(command) {
-          expect(command).to.eql('cordova create cordova com.poetic.test-app TestApp');
-          return resolveFn;
-        }
-      })
+      '../utils/run-command': function(command) {
+        expect(command).to.eql('cordova create cordova com.poetic.test-app TestApp');
+        return resolveFn;
+      }
     });
 
     return createProject(project)();
@@ -19,12 +17,10 @@ describe('Tasks - Create cordova project', function() {
 
   it('should execute in proper folder', function() {
     var createProject = proxyquire('../../lib/tasks/create-cordova-project', {
-      './cordova': proxyquire('../../lib/tasks/cordova', {
-        '../utils/run-command': function(_, _, options) {
-          expect(options.cwd).to.equal('project-root/cordova');
-          return resolveFn;
-        }
-      })
+      '../utils/run-command': function(_, _, options) {
+        expect(options.cwd).to.equal('project-root');
+        return resolveFn;
+      }
     });
 
     return createProject(project)();

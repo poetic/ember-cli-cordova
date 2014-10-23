@@ -27,8 +27,15 @@ ember generate cordova-init com.reverse.domain
 ```
 
 This will generate a base cordova iOS app and store it within the `cordova/`
-directory. If you would like to add other platforms, you can run the 
-`ember cordova` command:
+directory. If you want to generate an android project instead you must pass in
+the `--platform` option. That would look like this:
+
+```sh
+ember generate cordova-init com.reverse.domain --platform=android
+```
+
+If you would like to add more platforms, you can run the 
+`ember cordova` command after the project is initialized:
 
 ```sh
 ember cordova platform add android
