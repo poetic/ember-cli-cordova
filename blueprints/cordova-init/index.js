@@ -14,7 +14,7 @@ module.exports = {
 
   afterInstall: function(options) {
     this.options = options.entity.options;
-    this.options.platform = this.options.platform || 'ios';
+    this.options.platform = options.platform || 'ios';
 
     projectWithConfig(this.project, options.entity.name);
 
