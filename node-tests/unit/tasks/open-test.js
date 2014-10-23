@@ -4,15 +4,22 @@ describe('Tasks - Open', function() {
     project = newProject();
   });
 
-  describe('darwin', function() {
-    it('runs correct command', function() {
+  describe('runs correct command', function() {
+    it('ios', function() {
       var open = proxyquire('../../lib/tasks/open', {
         '../utils/run-command': function(command) {
-          expect(command).to.eql('open project-root/cordova/platforms/ios/*.xcodeproj');
+          expect(command).to.eql('xdg-open "project-root/cordova/platforms/ios/*.xcodeproj"');
         }
       });
-
-      return open(project);
+      return open(project,'ios');
+    });
+    it('android', function() {
+      var open = proxyquire('../../lib/tasks/open', {
+        '../utils/run-command': function(command) {
+          expect(command).to.eql('xdg-open "project-root/cordova/platforms/android/.project"');
+        }
+      });
+      return open(project,'android');
     });
   });
 });
