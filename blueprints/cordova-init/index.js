@@ -1,7 +1,17 @@
 var projectWithConfig = require('../../lib/models/project-with-config');
 var Promise           = require('../../lib/ext/promise');
+var stringUtils       = require('../../lib/utils/string');
 
 module.exports = {
+  locals: function(options) {
+    var name = options.project.pkg.name;
+
+    return {
+      namespace:     stringUtils.classify(name),
+      modulePrefix:  stringUtils.dasherize(name)
+    }
+  },
+
   afterInstall: function(options) {
     this.options = options.entity.options;
     this.options.platform = this.options.platform || 'ios';
