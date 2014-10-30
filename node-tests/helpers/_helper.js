@@ -1,4 +1,5 @@
 global.expect = require('chai').expect;
+global.sinon  = require('sinon');
 
 // Requiring a relative path will need to be relative to THIS file path
 global.proxyquire = require('proxyquire');
