@@ -1,6 +1,7 @@
 'use strict';
 
 var path      = require('path');
+var fs        = require('fs');
 var commands  = require('./lib/commands');
 var postBuild = require('./lib/tasks/post-build');
 var defaults  = require('lodash').defaults;
@@ -53,13 +54,28 @@ module.exports = {
         pluginsPath = path.join(platformsPath, config.liveReload.platform);
       }
 
+      var files = ['cordova.js', 'cordova_plugins.js'];
+
+      files.forEach(function(file) {
+        var filePath = path.join(pluginsPath, file);
+        if(!fs.existsSync(filePath)) {
+          var err = new Error('ember-cli-cordova: ' + filePath + ' did not exist. It is required for Device LiveReload to work.');
+          err.stack = null;
+          throw err;
+        }
+      });
+
+      if(fs.existsSync(path.join(pluginsPath, 'plugins'))) {
+        files.push('plugins/*');
+      }
+
       var pluginsTree = this.pickFiles(this.treeGenerator(pluginsPath), {
         srcDir: '/',
-        files: ['cordova.js', 'cordova_plugins.js', 'plugins/*'],
+        files: files,
         destDir: '/'
       });
 
-      console.log(chalk.green('Device LiveReload is enabled'));
+      console.log(chalk.green('ember-cli-cordova: Device LiveReload is enabled'));
 
       return this.mergeTrees([tree, pluginsTree]);
     }
