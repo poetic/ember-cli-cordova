@@ -11,8 +11,8 @@ module.exports = {
   name: 'ember-cli-cordova',
 
   contentFor: function(type) {
-    if(type === 'body') {
-      return '<script src="cordova.js"></script>';
+    if (type === 'body') {
+      return '<script src="inject-cordova.js"></script>';
     }
   },
 
