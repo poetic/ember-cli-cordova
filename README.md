@@ -11,6 +11,11 @@ this working with the latest stable release of ember-cli.
 Provide a toolchain tightly integrated with ember-cli to make developing hybrid
 apps with cordova and ember as simple as possible.
 
+## Supported Platfroms
+
+Android and iOS. While we don't plan on actively supporting other platforms,
+feel free to open an issue or submit a pull request.
+
 # Installation
 
 Inside of a generated ember-cli project run:
@@ -34,7 +39,7 @@ the `--platform` option. That would look like this:
 ember generate cordova-init com.reverse.domain --platform=android
 ```
 
-If you would like to add more platforms, you can run the 
+If you would like to add more platforms, you can run the
 `ember cordova` command after the project is initialized:
 
 ```sh
@@ -119,7 +124,7 @@ config. See the section below for the options.
 ### Configuration
 
 All configuration is currently optional. Configuration will be done in your
-app's config/environment.js file. You need to set it up like this: 
+app's config/environment.js file. You need to set it up like this:
 
 ```js
 ENV.cordova = {
