@@ -11,7 +11,7 @@ this working with the latest stable release of ember-cli.
 Provide a toolchain tightly integrated with ember-cli to make developing hybrid
 apps with cordova and ember as simple as possible.
 
-## Supported Platfroms
+## Supported Platforms
 
 Android and iOS. While we don't plan on actively supporting other platforms,
 feel free to open an issue or submit a pull request.
