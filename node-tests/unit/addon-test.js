@@ -11,7 +11,6 @@ describe('Addon', function() {
         expectWithConfig({locationType: 'auto'}).to.throw(Error);
       });
       it('should not throw an error', function() {
-        var baseConfig = {locationType: 'hash'};
         expectWithConfig({locationType: 'hash'}).to.not.throw(Error);
       });
       it('should not throw an error on test', function() {
