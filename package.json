@@ -6,7 +6,7 @@
   "repository": "https://github.com/poetic/ember-cli-cordova.git",
   "main": "index.js",
   "scripts": {
-    "node-test": "mocha --require node-tests/helpers/_helper.js --reporter spec node-tests/**/*-test.js",
+    "node-test": "mocha --require node-tests/helpers/_helper.js --reporter spec node-tests/**/*-test.js node-tests/**/**/*-test.js",
     "ember-test": "ember test",
     "test": "npm run node-test && npm run ember-test"
   },
