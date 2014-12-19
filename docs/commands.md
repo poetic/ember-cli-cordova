@@ -15,7 +15,7 @@ Open the native platform project with the default or specified application
 
 ####Examples
 + `ember cordova:open`
-+ `ember cordova:open --platform android --application eclipse`
++ `ember cordova:open --platform=android --application=eclipse`
 
 
 ##Archive
@@ -32,7 +32,7 @@ they will be performed after archiving.
 
 ####Examples
 + `ember cordova:archive`
-+ `ember cordova:archive 0.0.2 --environment staging --commit --tag `
++ `ember cordova:archive 0.0.2 --environment=staging --commit --tag `
 
 ##Build
 
@@ -46,7 +46,7 @@ Build the ember and cordova project together running in the simulator or on a de
 
 ####Examples
 + `ember cordova:build`
-+ `ember cordova:build --environment production --platform ios`
++ `ember cordova:build --environment=production --platform=ios`
 
 ##Prepare
 
