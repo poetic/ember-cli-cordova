@@ -22,15 +22,15 @@ Please see our Getting Started guide
 [here](https://github.com/poetic/ember-cli-cordova/blob/master/docs/getting-started.md)
 
 ## Blueprints
-+ `ember g cordova-init com.reverse.domain platform:android` Required generator
++ `ember g cordova-init com.reverse.domain --platform=android` Required generator
   that sets up the cordova project with a few tweaks to the ember app
 + `ember g cordova-starter-kit` Adds some packages and files that makes up the
   base setup for projects I develop.
 
 ## Commands
 + `ember cordova:open` open xcode project
-+ `ember cordova:build --environment production --platform ios` build cordova project
-+ `ember cordova:archive 0.0.2 --environment staging --commit --tag` archive ios project with xcode
++ `ember cordova:build --environment=production --platform=ios` build cordova project
++ `ember cordova:archive 0.0.2 --environment=staging --commit --tag` archive ios project with xcode
 + `ember cordova:prepare` needs to be run after cloning a project
 + `ember cordova` Passes commands(plugin(s), platform(s), run, emulate) and arguments to the cordova command
 + `ember help` ember cli help with a section for addon provided commands as well
