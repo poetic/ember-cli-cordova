@@ -28,7 +28,7 @@ ember-cli-cordova. You pass in the com domain identifier that you want to use
 with your app. It can be anything you like as long as it's unique. This matters
 if you plan on releasing it to the app store's. It takes an optional `platform`
 argument that defaults to `ios`. If you want to generate an android project you
-would pass in `--platform android` at the end.
+would pass in `--platform=android` at the end.
 
 ```sh
 ember generate cordova-init com.my-app.app
