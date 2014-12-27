@@ -23,6 +23,25 @@ initialize the cordova project.
 npm install --save-dev ember-cli-cordova
 ```
 
+Next, in order for the ember routing to work properly with cordova your urls must be of type hash. To accomplish this you must setup `locationType: 'hash'` on your `config/environment.js` file on the top. You should end with something similar to:
+
+```
+/* jshint node: true */
+
+module.exports = function(environment) {
+  var ENV = {
+    modulePrefix: 'sm-direct',
+    environment: environment,
+    baseURL: '/',
+    locationType: 'hash',
+    EmberENV: {
+      FEATURES: {
+        // Here you can enable experimental features on an ember canary build
+        // e.g. 'with-controller': true
+      }
+    },
+```
+
 To intialize the cordova project we use a generator provided by
 ember-cli-cordova. You pass in the com domain identifier that you want to use
 with your app. It can be anything you like as long as it's unique. This matters
