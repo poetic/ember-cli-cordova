@@ -24,7 +24,7 @@ Please see our Getting Started guide
 ## Blueprints
 + `ember g cordova-init com.reverse.domain --platform=android` Required generator
   that sets up the cordova project with a few tweaks to the ember app
-+ `ember g cordova-starter-kit` Adds some packages and files that makes up the
++ (optional) `ember g cordova-starter-kit` Adds some packages and files that makes up the
   base setup for projects I develop.
 
 ## Commands
