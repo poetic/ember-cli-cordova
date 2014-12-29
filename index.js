@@ -21,7 +21,13 @@ module.exports = {
   },
 
   cdvConfig: function() {
-    var cdvConfig = defaults(this.project.config('development').cordova || {}, {
+    var config = this.project.config('development');
+
+    if (config.environment !== 'test' && config.locationType !== 'hash') {
+      throw new Error('ember-cli-cordova: You must specify the locationType as \'hash\' in your environment.js');
+    }
+
+    var cdvConfig = defaults(config.cordova || {}, {
       liveReload: {
         enabled: false,
         platform: 'ios'
@@ -81,11 +87,5 @@ module.exports = {
     }
 
     return tree;
-  },
-
-  config: function(env, baseConfig) {
-    if (env !== 'test' && baseConfig.locationType !== 'hash') {
-      throw new Error('ember-cli-cordova: You must specify the locationType as \'hash\' in your environment.js');
-    }
   }
 };

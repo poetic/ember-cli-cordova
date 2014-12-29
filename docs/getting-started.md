@@ -16,30 +16,10 @@ First, let's set up your ember-cli project:
 ember new my-app
 ```
 
-After that's set up. We need to add ember-cli-cordova as a dependency and
-initialize the cordova project.
+After that's set up. We need to add the ember-cli-cordova addon. 
 
 ```sh
 npm install --save-dev ember-cli-cordova
-```
-
-Next, in order for the ember routing to work properly with cordova your urls must be of type hash. To accomplish this you must setup `locationType: 'hash'` on your `config/environment.js` file on the top. You should end with something similar to:
-
-```
-/* jshint node: true */
-
-module.exports = function(environment) {
-  var ENV = {
-    modulePrefix: 'sm-direct',
-    environment: environment,
-    baseURL: '/',
-    locationType: 'hash',
-    EmberENV: {
-      FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
-      }
-    },
 ```
 
 To intialize the cordova project we use a generator provided by
@@ -53,9 +33,12 @@ would pass in `--platform=android` at the end.
 ember generate cordova-init com.my-app.app
 ```
 
-This will create the cordova project for you in the `cordova` directory. If you
-ever need raw access to the cordova project you can `cd` into this directory to
-run the command or modify files.
+This will prompt you to overwrite some default files. You should overwrite them
+as they provide some required settings and helpful additions.
+
+This will also create the cordova project for you in the `cordova` directory. If
+you ever need raw access to the cordova project you can `cd` into this directory
+to run the command or modify files.
 
 After that, the project is ready to go. There are some configuration options in
 your environment config that you can set to enable / disable some features. See
