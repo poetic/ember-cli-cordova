@@ -6,20 +6,6 @@ export default Ember.Route.extend({
       history.back();
     },
 
-    closeModal: function() {
-      this.disconnectOutlet({
-        outlet: 'modal',
-        parentView: 'application'
-      });
-    },
-
-    openModal: function(name) {
-      this.render(name, {
-        into: 'application',
-        outlet: 'modal'
-      });
-    },
-
     openLink: function(url) {
       window.open(url, '_system');
     }
