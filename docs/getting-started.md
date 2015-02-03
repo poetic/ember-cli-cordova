@@ -62,9 +62,12 @@ ember generate cordova-starter-kit
 ## Developing The App
 
 Once your project is set up, you're ready to start developing. We've tried to
-keep the experience as similar to ember-cli as possible.
+keep the experience as similar to ember-cli as possible. You just need to move
+your `locationType` setting in `config/environment.js` to `defaultLocationType`
+so that it'd be used when not building for cordova (cordova needs `hash` as
+`locationType`).
 
-You can simply run the `serve` command and begin
+Then you can simply run the `serve` command and begin
 
 ```sh
 ember serve
@@ -77,6 +80,16 @@ quickest feedback loop, debugging tools and best experience.
 The one drawback to this is that any cordova plugins you use will not work in
 the browser. This means that when you want to test the functionality of
 a plugin, you will need to load the app up on a simulator or device.
+
+When you need to serve or build files for a browser environment (not for cordova)
+be sure to override the `EMBER_CLI_CORDOVA` environment variable to set it to a
+falsy value (`0`, `no`, `off` or `false`). It'll allow you to use `locationType`
+as specified in `defaultLocationType` and will not inject the `cordova.js`
+script tag.
+
+```sh
+EMBER_CLI_CORDOVA=0 ember serve
+```
 
 ### Running The App On A Simulator Or Device
 
