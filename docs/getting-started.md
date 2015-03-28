@@ -16,7 +16,7 @@ First, let's set up your ember-cli project:
 ember new my-app
 ```
 
-After that's set up. We need to add the ember-cli-cordova addon. 
+After that's set up, we need to add the ember-cli-cordova addon to the application. Go in the freshly generated `new-app` folder, then install the addon.
 
 ```sh
 npm install --save-dev ember-cli-cordova
