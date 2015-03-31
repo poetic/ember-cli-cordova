@@ -22,6 +22,12 @@ After that's set up, we need to add the ember-cli-cordova addon to the applicati
 npm install --save-dev ember-cli-cordova
 ```
 
+Ember cli-cordova requires cordova. If you don't have cordova, use this line to install it. 
+
+``` 
+npm install -g cordova
+```
+
 To intialize the cordova project we use a generator provided by
 ember-cli-cordova. You pass in the com domain identifier that you want to use
 with your app. It can be anything you like as long as it's unique. This matters
