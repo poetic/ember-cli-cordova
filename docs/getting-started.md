@@ -13,7 +13,7 @@ ember-cli-cordova.
 First, let's set up your ember-cli project:
 
 ```sh
-ember new my-app
+ember new hello
 ```
 
 After that's set up, we need to add the ember-cli-cordova addon to the application. Go in the freshly generated `new-app` folder, then install the addon.
@@ -36,7 +36,7 @@ argument that defaults to `ios`. If you want to generate an android project you
 would pass in `--platform=android` at the end.
 
 ```sh
-ember generate cordova-init com.my-app.app
+ember generate cordova-init com.poeticsystems.hello
 ```
 
 This will prompt you to overwrite some default files. You should overwrite them
