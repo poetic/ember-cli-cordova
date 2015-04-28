@@ -6,7 +6,8 @@ var commands = require('./lib/commands');
 var postBuild = require('./lib/tasks/post-build');
 var defaults = require('lodash').defaults;
 var chalk = require('chalk');
-
+var mergeTrees = require('broccoli-merge-trees');
+var Funnel = require('broccoli-funnel');
 
 module.exports = {
   name: 'ember-cli-cordova',
@@ -93,18 +94,18 @@ module.exports = {
       });
 
       if (fs.existsSync(path.join(pluginsPath, 'plugins'))) {
-        files.push('plugins/*');
+        files.push('plugins/**');
       }
 
-      var pluginsTree = this.pickFiles(this.treeGenerator(pluginsPath), {
+      var pluginsTree = new Funnel(this.treeGenerator(pluginsPath), {
         srcDir:  '/',
-        files:   files,
+        include: files,
         destDir: '/'
       });
 
       console.log(chalk.green('ember-cli-cordova: Device LiveReload is enabled'));
 
-      return this.mergeTrees([tree, pluginsTree]);
+      return mergeTrees([tree, pluginsTree]);
     }
 
     return tree;
