@@ -75,6 +75,9 @@ module.exports = {
       if (config.liveReload.platform === 'ios') {
         pluginsPath = path.join(platformsPath, 'ios', 'www');
       }
+      else if (config.liveReload.platform === 'browser') {
+        pluginsPath = path.join(platformsPath, 'browser', 'www');
+      }
       else if (config.liveReload.platform === 'android') {
         pluginsPath = path.join(platformsPath, 'android', 'assets', 'www');
       }
