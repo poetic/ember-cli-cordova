@@ -31,7 +31,7 @@ npm install -g cordova
 To intialize the cordova project we use a generator provided by
 ember-cli-cordova. You pass in the com domain identifier that you want to use
 with your app. It can be anything you like as long as it's unique. This matters
-if you plan on releasing it to the app store's. It takes an optional `platform`
+if you plan on releasing it to the app stores. It takes an optional `platform`
 argument that defaults to `ios`. If you want to generate an android project you
 would pass in `--platform=android` at the end.
 
