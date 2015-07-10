@@ -1,3 +1,5 @@
+/* jshint esnext:true */
+
 import Ember from 'ember';
 
 // from https://cordova.apache.org/docs/en/4.0.0/cordova_events_events.md.html

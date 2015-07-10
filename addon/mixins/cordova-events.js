@@ -1,3 +1,5 @@
+/* jshint esnext:true */
+
 import Ember from 'ember';
 
 // include this mixin to define cordova event listeners with an onCordova object
@@ -16,14 +18,9 @@ import Ember from 'ember';
 export default Ember.Mixin.create({
   cordova: Ember.inject.service(),
 
-  // n.b. if using this mixin on an object that overrides init, call this._super
-  init: function() {
-    this._super.apply(this, arguments);
-
-    // subscribe to declared cordova events
-    var cordova, onCordova;
-    cordova = this.get('cordova');
-    onCordova = this.get('onCordova');
+  subscribeToCordovaEvents: Ember.on('init', function() {
+    var cordova = this.get('cordova'),
+        onCordova = this.get('onCordova');
 
     Ember.keys(onCordova).forEach(function(key) {
       var func = Ember.get(onCordova, key);
@@ -41,7 +38,7 @@ export default Ember.Mixin.create({
         }
       }
     }, this);
-  },
+  }),
 
   _validateIsFunction: function(func) {
     var isFunction = false;
