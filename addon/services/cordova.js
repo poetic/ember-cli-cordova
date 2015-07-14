@@ -47,14 +47,5 @@ export default Ember.Service.extend(
         _this.trigger(eventName);
       });
     });
-  }),
-
-  // todo: expose config option
-  mapTouchEvents: Ember.on('deviceready', function() {
-    // todo: deprecated class, keep an eye on this
-    // n.b. similar strategy is currently recommended in Ember.LinkView api docs
-    Ember.View.reopen({
-      touchStart: Ember.aliasMethod('click')
-    });
   })
 });
