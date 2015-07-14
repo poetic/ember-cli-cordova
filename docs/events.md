@@ -29,9 +29,6 @@ export default MyEmberObject.extend({
 });
 ```
 
-_HEADS UP: if your object overrides `init` and you extend it with this mixin,
-make sure to call `this._super();` if you intend to catch Cordova events._
-
 (Yes, `onCordova` supports arrays of named functions, single named functions,
 and anonymous functions!)
 
