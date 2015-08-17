@@ -20,7 +20,9 @@ matching the key is emitted. For example:
 ```javascript
 import CordovaEventsMixin from 'ember-cli-cordova/mixins/cordova-events';
 
-export default MyEmberObject.extend({
+export default MyEmberObject.extend(
+  CordovaEventsMixin, {
+
   onCordova: {
     pause: ['pauseListening', 'disconnectPeripheral'],
     resume: 'resumeListening',
