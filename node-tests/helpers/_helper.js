@@ -18,6 +18,11 @@ global.newProject = function() {
       id: 'com.poetic.test-app',
       name: 'TestApp'
     },
-    root: 'project-root'
+    root: 'project-root',
+    config: function (){
+      return {
+        cordova: {}
+      };
+    }
   }
 };
