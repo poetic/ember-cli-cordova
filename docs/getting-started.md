@@ -19,7 +19,7 @@ ember new hello
 After that's set up, we need to add the ember-cli-cordova addon to the application. Go in the freshly generated `hello` folder, then install the addon.
 
 ```sh
-npm install --save-dev ember-cli-cordova
+ember install ember-cli-cordova
 ```
 
 Ember cli-cordova requires cordova. If you don't have cordova, use this line to install it. 
