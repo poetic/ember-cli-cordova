@@ -8,6 +8,13 @@ ember-cli-cordova.
 - [ember-cli](http://www.ember-cli.com)
 - [cordova](https://www.npmjs.org/package/cordova)
 
+Ember-cli-cordova requires ember-cli and cordova. You may install them as follows:
+
+``` 
+npm install -g ember-cli
+npm install -g cordova
+```
+
 ## Setting Up The App
 
 First, let's set up your ember-cli project:
@@ -16,17 +23,13 @@ First, let's set up your ember-cli project:
 ember new hello
 ```
 
-After that's set up, we need to add the ember-cli-cordova addon to the application. Go in the freshly generated `hello` folder, then install the addon.
+Once your project is created go in the freshly generated `hello` folder and add the ember-cli-cordova addon to the application.
 
 ```sh
 ember install ember-cli-cordova
 ```
 
-Ember cli-cordova requires cordova. If you don't have cordova, use this line to install it. 
-
-``` 
-npm install -g cordova
-```
+After that you need to change your `locationType` settings key in `config/environment.js` to `defaultLocationType` so that it'd be used when not building for cordova (cordova needs hash as locationType).
 
 To intialize the cordova project we use a generator provided by
 ember-cli-cordova. You pass in the com domain identifier that you want to use
@@ -68,12 +71,9 @@ ember generate cordova-starter-kit
 ## Developing The App
 
 Once your project is set up, you're ready to start developing. We've tried to
-keep the experience as similar to ember-cli as possible. You just need to move
-your `locationType` setting in `config/environment.js` to `defaultLocationType`
-so that it'd be used when not building for cordova (cordova needs `hash` as
-`locationType`).
+keep the experience as similar to ember-cli as possible.
 
-Then you can simply run the `serve` command and begin
+Simply run the `serve` command and begin
 
 ```sh
 ember serve
