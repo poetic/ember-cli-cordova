@@ -1,6 +1,7 @@
 var projectWithConfig = require('../../lib/models/project-with-config');
 var Promise           = require('../../lib/ext/promise');
 var stringUtils       = require('../../lib/utils/string');
+var defaultPlatform   = require('../../lib/utils/default-platform');
 
 module.exports = {
   locals: function(options) {
@@ -13,8 +14,8 @@ module.exports = {
   },
 
   afterInstall: function(options) {
-    this.options = options.entity.options;
-    this.options.platform = options.platform || 'ios';
+    this.options          = options.entity.options;
+    this.options.platform = options.platform || defaultPlatform(this.project);
 
     projectWithConfig(this.project, options.entity.name);
 

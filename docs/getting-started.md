@@ -1,7 +1,7 @@
 # Getting Started
 
 This guide will walk you through setting up your first app with
-ember-cli-cordova. 
+ember-cli-cordova.
 
 ## Prerequisites
 
@@ -22,9 +22,9 @@ After that's set up, we need to add the ember-cli-cordova addon to the applicati
 ember install ember-cli-cordova
 ```
 
-Ember cli-cordova requires cordova. If you don't have cordova, use this line to install it. 
+Ember cli-cordova requires cordova. If you don't have cordova, use this line to install it.
 
-``` 
+```
 npm install -g cordova
 ```
 
@@ -33,7 +33,7 @@ ember-cli-cordova. You pass in the com domain identifier that you want to use
 with your app. It can be anything you like as long as it's unique. This matters
 if you plan on releasing it to the app stores. It takes an optional `platform`
 argument that defaults to `ios`. If you want to generate an android project you
-would pass in `--platform=android` at the end.
+would pass in `--platform=android` at the end or set your default platform in [cordova configuration](https://github.com/poetic/ember-cli-cordova/blob/master/docs/configuration.md).
 
 ```sh
 ember generate cordova-init com.poeticsystems.hello
