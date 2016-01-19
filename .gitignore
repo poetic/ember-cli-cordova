@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+!/dist/.keep
 /tmp
 
 # dependencies
