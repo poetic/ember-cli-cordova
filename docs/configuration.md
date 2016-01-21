@@ -16,6 +16,14 @@ ENV.cordova = {
   // default: false
   emulate: true,
 
+  // Which emulated target to deploy to
+  //
+  // default: <system default>
+  emulateTarget: {
+    ios: "iPad-2",
+    android: "android-20"
+  }
+
   // Which platform to build and/or emulate
   //
   // default: 'ios'
