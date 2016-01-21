@@ -1,4 +1,4 @@
-# ember-cli-cordova [![Build Status](https://travis-ci.org/poetic/ember-cli-cordova.svg?branch=master)](https://travis-ci.org/poetic/ember-cli-cordova)
+# ember-cli-cordova [![Build Status](https://travis-ci.org/poetic/ember-cli-cordova.svg?branch=master)](https://travis-ci.org/poetic/ember-cli-cordova) [![Gitter](https://badges.gitter.im/poetic/ember-cli-cordova.svg)](https://gitter.im/poetic/ember-cli-cordova?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 *requires at least ember-cli >= 0.1.1*
 
