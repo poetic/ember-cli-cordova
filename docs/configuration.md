@@ -22,7 +22,7 @@ ENV.cordova = {
   emulateTarget: {
     ios: "iPad-2",
     android: "android-20"
-  }
+  },
 
   // Which platform to build and/or emulate
   //
