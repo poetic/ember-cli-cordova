@@ -35,7 +35,7 @@ module.exports = {
     return Promise.all([
       this.addPackageToProject('broccoli-sass'),
       this.addPackageToProject('liquid-fire'),
-      this.addPackageToProject('ember-mobiletouch')
+      this.addPackageToProject('ember-gestures')
     ]);
   }
 };
