@@ -1,7 +1,5 @@
 # ember-cli-cordova [![Build Status](https://travis-ci.org/poetic/ember-cli-cordova.svg?branch=master)](https://travis-ci.org/poetic/ember-cli-cordova) [![Gitter](https://badges.gitter.im/poetic/ember-cli-cordova.svg)](https://gitter.im/poetic/ember-cli-cordova?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-*requires at least ember-cli >= 0.1.1*
-
 I will not be focusing on backward compatibility with older ember-cli versions
 as it's moving too fast and the API is constantly changing. I will always have
 this working with the latest stable release of ember-cli.
@@ -15,6 +13,12 @@ apps with cordova and ember as simple as possible.
 
 Android and iOS. While we don't plan on actively supporting other platforms,
 feel free to open an issue or submit a pull request.
+
+## Required Ember Versions
+
+Releases as of 0.1.0 require Ember 2.x and ember-cli 2.3.0.
+
+The lastest release for Ember 1.x is 0.0.19 and requires at least ember-cli >= 0.1.1
 
 ## Getting Started
 
