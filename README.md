@@ -47,6 +47,19 @@ Documentation can be found found in the docs directory [here](https://github.com
 - [Configuration](https://github.com/poetic/ember-cli-cordova/blob/master/docs/configuration.md)
 - [FAQ](https://github.com/poetic/ember-cli-cordova/blob/master/docs/faq.md)
 
+# ember-cordova
+
+[ember-cordova](https://github.com/isleofcode/ember-cordova) recently started as a fork of ember-cli-cordova by some
+contributors and maintainers. It only supports Ember 2, and includes
+added features such as build hooks, native splash screen & icon management,
+a platform service (e.g. isIOS) and an ember/cordova plugin ecosystem.
+
+ember-cli-cordova will still be maintained and active.
+
+It does not include features such as mobiletouch by default, starter
+blueprints and support for Ember <2. For these items, your best bet is
+to continue with ember-cli-cordova.
+
 # Dependency Docs
 
 -  [ember-cli](http://ember-cli.com)
