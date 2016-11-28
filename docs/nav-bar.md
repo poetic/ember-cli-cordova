@@ -36,7 +36,7 @@ ember's
 [willTransition](http://emberjs.com/api/classes/Ember.Route.html#event_willTransition) in the route. All options are optional.
 
 ```js
-import NavBarMixin from 'ember-cli-cordova/mixins/route/nav-bar';
+import NavBarMixin from 'ember-cli-cordova/mixins/routes/nav-bar';
 
 export default Ember.Route.extend(NavBarMixin, {
   nav: {

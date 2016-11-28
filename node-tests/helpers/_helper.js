@@ -1,6 +1,9 @@
 global.expect = require('chai').expect;
 global.sinon  = require('sinon');
 
+// be sure to not have any env variable set
+delete process.env.EMBER_CLI_CORDOVA;
+
 // Requiring a relative path will need to be relative to THIS file path
 global.proxyquire = require('proxyquire');
 
@@ -15,6 +18,11 @@ global.newProject = function() {
       id: 'com.poetic.test-app',
       name: 'TestApp'
     },
-    root: 'project-root'
+    root: 'project-root',
+    config: function (){
+      return {
+        cordova: {}
+      };
+    }
   }
-}
+};

@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+!/dist/.keep
 /tmp
 
 # dependencies
@@ -15,3 +16,4 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+.idea

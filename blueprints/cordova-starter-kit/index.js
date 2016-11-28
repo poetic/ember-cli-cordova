@@ -34,7 +34,8 @@ module.exports = {
   afterInstall: function() {
     return Promise.all([
       this.addPackageToProject('broccoli-sass'),
-      this.addPackageToProject('liquid-fire')
+      this.addPackageToProject('liquid-fire'),
+      this.addPackageToProject('ember-gestures')
     ]);
   }
 };

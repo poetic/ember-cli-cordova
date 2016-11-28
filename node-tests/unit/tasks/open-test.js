@@ -28,11 +28,11 @@ describe('Tasks - Open', function() {
       });
 
       it('ios', function() {
-        return assertOpenCommand(project, 'ios', 'open "project-root/cordova/platforms/ios/*.xcodeproj"');
+        return assertOpenCommand(project, 'ios', 'open project-root/cordova/platforms/ios/*.xcodeproj');
       });
 
       it('android', function() {
-        return assertOpenCommand(project, 'android', 'open "project-root/cordova/platforms/android/.project"');
+        return assertOpenCommand(project, 'android', 'open project-root/cordova/platforms/android/.project');
       });
     });
 
@@ -42,11 +42,11 @@ describe('Tasks - Open', function() {
       });
 
       it('ios', function() {
-        return assertOpenCommand(project, 'ios', 'start "project-root/cordova/platforms/ios/*.xcodeproj"');
+        return assertOpenCommand(project, 'ios', 'start project-root/cordova/platforms/ios/*.xcodeproj');
       });
 
       it('android', function() {
-        return assertOpenCommand(project, 'android', 'start "project-root/cordova/platforms/android/.project"');
+        return assertOpenCommand(project, 'android', 'start project-root/cordova/platforms/android/.project');
       });
     });
 
@@ -56,11 +56,11 @@ describe('Tasks - Open', function() {
       });
 
       it('ios', function() {
-        return assertOpenCommand(project, 'ios', 'xdg-open "project-root/cordova/platforms/ios/*.xcodeproj"');
+        return assertOpenCommand(project, 'ios', 'xdg-open project-root/cordova/platforms/ios/*.xcodeproj');
       });
 
       it('android', function() {
-        return assertOpenCommand(project, 'android', 'xdg-open "project-root/cordova/platforms/android/.project"');
+        return assertOpenCommand(project, 'android', 'xdg-open project-root/cordova/platforms/android/.project');
       });
     });
   });
