@@ -1,7 +1,7 @@
 ### Configuration
 
 All configuration is currently optional. Configuration will be done in your
-app's `config/environment`. You need to set it up like this: 
+app's `config/environment`. You need to set it up like this:
 
 ```js
 ENV.cordova = {
