@@ -40,7 +40,7 @@
     "recursive-readdir": "^1.1.1",
     "rsvp": "^3.0.6",
     "sinon": "^1.17.3",
-    "underscore.string": "^2.3.3"
+    "underscore.string": "^3.3.5"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
